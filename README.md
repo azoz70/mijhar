@@ -10,13 +10,21 @@ SAMA CSF, CIS Benchmarks, and ISO/IEC 27001.
 > MIJHAR is **not** a penetration testing tool. It does not exploit
 > vulnerabilities, and it is **read-only by default**.
 
-## Demo
+## Screenshots
 
-![MIJHAR terminal demo](demo.gif)
+**What you see on launch** — the MIJHAR identity screen and main menu:
 
-*Interactive main menu → supported platforms → a real macOS assessment with
-platform-aware checks, colored PASS/FAIL results, and the "excluded checks"
-scope-transparency table.*
+![MIJHAR startup screen](screenshots/startup.png)
+
+**Sample macOS assessment** — platform-aware findings with colored
+PASS/FAIL/WARNING/ERROR results:
+
+![MIJHAR scan findings](screenshots/findings.png)
+
+**Scope transparency** — checks excluded from the scan (with reasons) and the
+per-framework compliance overview:
+
+![MIJHAR exclusions and compliance](screenshots/exclusions-compliance.png)
 
 ## Highlights
 
