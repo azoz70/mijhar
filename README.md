@@ -14,17 +14,17 @@ SAMA CSF, CIS Benchmarks, and ISO/IEC 27001.
 
 **What you see on launch** — the MIJHAR identity screen and main menu:
 
-![MIJHAR startup screen](screenshots/startup.png)
+![MIJHAR startup screen](screenshots/startup.webp)
 
-**Sample macOS assessment** — platform-aware findings with colored
-PASS/FAIL/WARNING/ERROR results:
+**Supported platforms & framework coverage** — implemented vs. planned modules
+and the complete framework catalog:
 
-![MIJHAR scan findings](screenshots/findings.png)
+![MIJHAR supported platforms and frameworks](screenshots/platforms.webp)
 
-**Scope transparency** — checks excluded from the scan (with reasons) and the
-per-framework compliance overview:
+**Sample macOS assessment** — summary, colored PASS/FAIL/WARNING/ERROR
+findings, excluded checks with reasons, and per-framework compliance:
 
-![MIJHAR exclusions and compliance](screenshots/exclusions-compliance.png)
+![MIJHAR scan results](screenshots/scan-results.webp)
 
 ## Highlights
 
