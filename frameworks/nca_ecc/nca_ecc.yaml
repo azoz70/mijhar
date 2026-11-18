@@ -1,0 +1,1873 @@
+# NCA Essential Cybersecurity Controls — ECC-2:2024
+# Source: official ECC-2:2024 document (TLP:White / Public).
+# Controls classified as technical (assessable) vs excluded (non-technical);
+# mapping types: direct / partial / supporting_evidence.
+id: nca-ecc
+name: NCA Essential Cybersecurity Controls
+version: ECC-2:2024
+description: Essential Cybersecurity Controls (ECC-2:2024), National Cybersecurity Authority. 4 main domains, 28 subdomains, 108 main controls and 91 subcontrols (extracted from the official document body).
+mapping_note: Control IDs, sub-control IDs and titles are extracted verbatim from the official ECC-2:2024 document (public / TLP:White). Rule-to-control links are interpretive and marked unverified; they
+  require review by a qualified assessor.
+domains:
+- id: '1'
+  name: Cybersecurity Governance
+  controls:
+  - id: 1-1-1
+    title: Cybersecurity strategy of the entity shall be identified, documented, and approved, and it shall ...
+    description: The cybersecurity strategy of the entity shall be identified, documented, and approved, and it shall be supported by the head of the entity or his/her delegate (Hereinafter referred to
+      as the “Authorized Official”). The strategy goals shall be in line with the relevant legislative and regulatory requirements.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Strategy
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-1-2
+    title: Entity shall execute an action plan to apply the cybersecurity strategy
+    description: The entity shall execute an action plan to apply the cybersecurity strategy.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Strategy
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-1-3
+    title: Cybersecurity strategy shall be reviewed at planned intervals (or in case of changes to the relev...
+    description: The cybersecurity strategy shall be reviewed at planned intervals (or in case of changes to the relevant legislative and regulatory requirements).
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Strategy
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-2-1
+    title: Department for cybersecurity shall be established within the entity. This department shall be ind...
+    description: A department for cybersecurity shall be established within the entity. This department shall be independent from the Information Technology and Communications Department (As per High Order
+      No. 37140, dated 14/08/1438H.). It is recommended that the Cybersecurity Department reports directly to the head of the entity or his/her delegate while ensuring that this does not result in a conflict
+      of interests.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-2-2
+    title: All cybersecurity positions shall be filled out with full-time and qualified Saudi cybersecurity ...
+    description: All cybersecurity positions shall be filled out with full-time and qualified Saudi cybersecurity professionals.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-2-3
+    title: Cybersecurity supervisory committee shall be established pursuant to the instruction of the entit...
+    description: A cybersecurity supervisory committee shall be established pursuant to the instruction of the entity’s Authorized Official to ensure compliance with, support for, and monitoring of the
+      implementation of the cybersecurity programs and regulations. The committee’s members, responsibilities, and governance framework shall be identified, documented, and approved. The committee shall
+      include the head of the cybersecurity department as a member. It is recommended that the committee reports directly to the head of the entity or his/her delegate while ensuring that this does not
+      result in a conflict of interests.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-3-1
+    title: Cybersecurity department of the entity shall identify and document cybersecurity policies and pro...
+    description: The cybersecurity department of the entity shall identify and document cybersecurity policies and procedures, including the cybersecurity controls and requirements, and have them approved
+      by the entity’s Authorized Official, and communicate them to the relevant personnel and parties inside the entity.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Policies and Procedures
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-3-2
+    title: Cybersecurity department shall ensure that the cybersecurity policies and procedures, including t...
+    description: The cybersecurity department shall ensure that the cybersecurity policies and procedures, including the relevant controls and requirements, are implemented at the entity.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Policies and Procedures
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-3-3
+    title: Cybersecurity policies and procedures shall be supported by technical security standards (e.g. te...
+    description: The cybersecurity policies and procedures shall be supported by technical security standards (e.g. technical security standards for firewall, databases, operating systems, etc.).
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Policies and Procedures
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-3-4
+    title: Cybersecurity policies and procedures shall be reviewed and updated at planned intervals (or in c...
+    description: The cybersecurity policies and procedures shall be reviewed and updated at planned intervals (or in case of changes to the relevant legislative and regulatory requirements and standards).
+      Changes shall be documented and approved.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Policies and Procedures
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-4-1
+    title: Authorized Official shall identify, document, and approve the governance organizational structure...
+    description: The Authorized Official shall identify, document, and approve the governance organizational structure, roles, and responsibilities of the entity’s cybersecurity, and assign the persons
+      concerned therewith. The necessary support shall be provided for the implementation thereof while ensuring that this does not result in a conflict of interests.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Roles and Responsibilities
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-4-2
+    title: Cybersecurity roles and responsibilities within the entity shall be reviewed and updated at plann...
+    description: The cybersecurity roles and responsibilities within the entity shall be reviewed and updated at planned intervals (or in case of changes to the relevant legislative and regulatory requirements).
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Roles and Responsibilities
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-1
+    title: Cybersecurity department of the entity shall identify, document, and approve the cybersecurity ri...
+    description: The cybersecurity department of the entity shall identify, document, and approve the cybersecurity risk management methodology and procedures within the entity, in accordance with considerations
+      of confidentiality, and the integrity and availability of information and technology assets.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-2
+    title: Cybersecurity department shall implement the cybersecurity risk management methodology and proced...
+    description: The cybersecurity department shall implement the cybersecurity risk management methodology and procedures within the entity.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-3
+    title: 'Cybersecurity risk assessment procedures shall be implemented at least in the following cases:'
+    description: 'The cybersecurity risk assessment procedures shall be implemented at least in the following cases:'
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-3-1
+    title: At early stage of technology projects.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-3-2
+    title: Before making major changes to technology infrastructure.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-3-3
+    title: During planning to obtain third party services.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-3-4
+    title: During planning and before the release of new technology services and products.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-5-4
+    title: Cybersecurity risk management methodology and procedures shall be reviewed and updated at planned...
+    description: The cybersecurity risk management methodology and procedures shall be reviewed and updated at planned intervals (or in case of changes to the relevant legislative and regulatory requirements
+      and standards). Changes shall be documented and approved.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Risk Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-1
+    title: Cybersecurity requirements shall be included in the project management methodology and procedures...
+    description: Cybersecurity requirements shall be included in the project management methodology and procedures and in the information and technology asset change management within the entity to ensure
+      identifying and managing cybersecurity risks as part of the technology project lifecycle. The cybersecurity requirements shall be a key part of the requirements for technology projects.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-2
+    title: Project management and information and technology asset changes within the entity
+    description: 'The cybersecurity requirements for project management and information and technology asset changes within the entity shall include the following as a minimum:'
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-2-1
+    title: Vulnerability assessment and remediation.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-2-2
+    title: Reviewing secure configuration and hardening and updates packages before launching projects and changes.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-3
+    title: Software and application development projects within the entity
+    description: 'The cybersecurity requirements for software and application development projects within the entity shall include the following as a minimum:'
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-3-1
+    title: Using the secure coding standards.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-3-2
+    title: Using trusted and licensed sources for software development tools and libraries.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-3-3
+    title: Conducting compliance test for software against the cybersecurity requirements within the entity.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-3-4
+    title: Secure integration between applications.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-3-5
+    title: Reviewing secure configuration and hardening and updates packages before launching software products
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-6-4
+    title: Project management within the entity
+    description: The cybersecurity requirements for project management within the entity shall be periodically reviewed.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Information and Technology Project Management
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-7-1
+    title: If there are nationally approved international agreements or commitments that include cybersecuri...
+    description: If there are nationally approved international agreements or commitments that include cybersecurity requirements, the entity shall identify and comply with these requirements.
+    domain: Cybersecurity Governance
+    subdomain: Compliance with Cybersecurity Standards, Laws and Regulations
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-8-1
+    title: Cybersecurity department of the entity shall periodically review the implementation of cybersecur...
+    description: The cybersecurity department of the entity shall periodically review the implementation of cybersecurity controls by the entity.
+    domain: Cybersecurity Governance
+    subdomain: Periodical Cybersecurity Review and Audit
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-8-2
+    title: Implementation of cybersecurity controls by the entity shall be reviewed and audited by parties o...
+    description: The implementation of cybersecurity controls by the entity shall be reviewed and audited by parties other than the cybersecurity department at the entity, provided that the audit and review
+      are to be conducted independently while considering the principle of conflict of interest, as per the Generally Accepted Auditing Standards (GAAS) and the relevant legislative and regulatory requirements.
+    domain: Cybersecurity Governance
+    subdomain: Periodical Cybersecurity Review and Audit
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-8-3
+    title: Results of cybersecurity audits and reviews shall be documented and presented to the cybersecurit...
+    description: The results of cybersecurity audits and reviews shall be documented and presented to the cybersecurity supervisory committee and the Authorized Official. Results shall include the audit
+      and review scope, observations, recommendations, corrective actions, and remediation plans.
+    domain: Cybersecurity Governance
+    subdomain: Periodical Cybersecurity Review and Audit
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-1
+    title: Personnel of the entity shall be identified, documented, and approved prior to, during, and upon ...
+    description: Cybersecurity requirements for personnel of the entity shall be identified, documented, and approved prior to, during, and upon the end or termination of their employment.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-2
+    title: Personnel of the entity
+    description: Cybersecurity requirements for personnel of the entity shall be implemented.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-3
+    title: Cybersecurity requirements prior to the commencement of the employment relationship between perso...
+    description: 'Cybersecurity requirements prior to the commencement of the employment relationship between personnel and the entity shall include the following as a minimum:'
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-3-1
+    title: Incorporating the personnel’s cybersecurity responsibilities clauses and non- disclosure clauses in their employment contracts with the entity (including during and after employment end/termination
+      with the entity).
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-3-2
+    title: Conducting screening or vetting for personnel in cybersecurity positions and technical positions with critical and privileged powers.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-4
+    title: Personnel during their employment relationship with the entity
+    description: 'Cybersecurity requirements for personnel during their employment relationship with the entity shall include the following as a minimum:'
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-4-1
+    title: Cybersecurity awareness (during on-boarding and during employment).
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-4-2
+    title: Implementation and compliance with cybersecurity requirements, as per the entity’s cybersecurity policies, procedures, and operations.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-5
+    title: Personnel’s powers shall be reviewed and revoked immediately upon the end/termination of their em...
+    description: The personnel’s powers shall be reviewed and revoked immediately upon the end/termination of their employment with the entity.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-9-6
+    title: Personnel of the entity
+    description: Cybersecurity requirements for personnel of the entity shall be periodically reviewed.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity in Human Resources
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-1
+    title: Cybersecurity awareness program, delivered through multiple channels, shall be periodically devel...
+    description: A cybersecurity awareness program, delivered through multiple channels, shall be periodically developed and approved by the entity to strengthen the awareness about cybersecurity, cyber
+      threats, and risks, and to build a positive cybersecurity awareness culture.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-2
+    title: Approved cybersecurity awareness program shall be implemented within the entity
+    description: The approved cybersecurity awareness program shall be implemented within the entity.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-3
+    title: Cybersecurity awareness program shall include how to protect the entity against the most importan...
+    description: 'The cybersecurity awareness program shall include how to protect the entity against the most important and latest cyber risks and threats, including:'
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-3-1
+    title: Secure handling of email services, especially phishing emails.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-3-2
+    title: Secure handling of mobile devices and storage media.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-3-3
+    title: Secure Internet browsing.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-3-4
+    title: Secure usage of social media.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-4
+    title: Specialized skills and necessary training shall be provided to personnel in positions that are li...
+    description: 'Specialized skills and necessary training shall be provided to personnel in positions that are linked directly to cybersecurity within the entity. Such skills and training shall be classified
+      in line with their cybersecurity responsibilities, including:'
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-4-1
+    title: Cybersecurity department personnel.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-4-2
+    title: Personnel working on software/application development and those working on information and technology assets of the entity.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-4-3
+    title: Executive and supervisory positions.
+    description: ''
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+  - id: 1-10-5
+    title: Implementation of cybersecurity awareness program within the entity
+    description: The implementation of cybersecurity awareness program within the entity shall be periodically reviewed.
+    domain: Cybersecurity Governance
+    subdomain: Cybersecurity Awareness and Training Program
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Cybersecurity governance/policy — outside technical configuration assessment scope.
+- id: '2'
+  name: Cybersecurity Defense
+  controls:
+  - id: 2-1-1
+    title: Managing information and technology assets of the entity
+    description: Cybersecurity requirements for managing information and technology assets of the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Asset Management
+    verified: true
+    mappings: []
+  - id: 2-1-2
+    title: Managing information and technology assets of the entity
+    description: Cybersecurity requirements for managing information and technology assets of the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Asset Management
+    verified: true
+    mappings: []
+  - id: 2-1-3
+    title: Policy of acceptable use of information and technology assets of the entity shall be identified, ...
+    description: The policy of acceptable use of information and technology assets of the entity shall be identified, documented, approved, and communicated.
+    domain: Cybersecurity Defense
+    subdomain: Asset Management
+    verified: true
+    mappings: []
+  - id: 2-1-4
+    title: Policy of acceptable use of information and technology assets of the entity
+    description: The policy of acceptable use of information and technology assets of the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Asset Management
+    verified: true
+    mappings: []
+  - id: 2-1-5
+    title: Information and technology assets of the entity shall be classified, labeled, and handled as per ...
+    description: Information and technology assets of the entity shall be classified, labeled, and handled as per the relevant legislative and regulatory requirements.
+    domain: Cybersecurity Defense
+    subdomain: Asset Management
+    verified: true
+    mappings: []
+  - id: 2-1-6
+    title: Managing information and technology assets of the entity
+    description: Cybersecurity requirements for managing information and technology assets of the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Asset Management
+    verified: true
+    mappings: []
+  - id: 2-2-1
+    title: Identity and access management of the entity
+    description: Cybersecurity requirements for identity and access management of the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    verified: true
+    mappings: []
+  - id: 2-2-2
+    title: Identity and access management of the entity
+    description: Cybersecurity requirements for identity and access management of the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    verified: true
+    mappings: []
+  - id: 2-2-3
+    title: Identity and access management of the entity
+    description: 'Cybersecurity requirements for identity and access management of the entity shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    verified: true
+    mappings:
+    - rule_id: SSH-003
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-2-3
+      notes: Interpretive rule-to-control link (pending review).
+    - rule_id: PASS-001
+      type: supporting_evidence
+      verified: false
+      source: ECC-2:2024 control 2-2-3
+      notes: Interpretive rule-to-control link (pending review).
+    - rule_id: FILE-001
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-2-3
+      notes: Interpretive rule-to-control link (pending review).
+    - rule_id: MAC-006
+      type: supporting_evidence
+      verified: false
+      source: ECC-2:2024 control 2-2-3
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-2-3-1
+    title: Single-factor authentication based on username and password.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-2-3-2
+    title: Multi-factor authentication, and defining the suitable authentication factors and their numbers as well as the suitable authentication techniques based on the result of impact assessment of authentication
+      failure and bypass for remote access and for privileged accounts.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: SSH-002
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-2-3-2
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-2-3-3
+    title: User authorization based on identity and access control principles (Need-to- Know and Need-to-Use principle, Least Privilege principle, and Segregation of Duties principle).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-2-3-4
+    title: Privileged access management.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: SSH-001
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-2-3-4
+      notes: Interpretive rule-to-control link (pending review).
+    - rule_id: FILE-002
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-2-3-4
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-2-3-5
+    title: Periodic review of identities and access rights.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-2-4
+    title: Implementation of cybersecurity requirements for identity and access management of the entity
+    description: The implementation of cybersecurity requirements for identity and access management of the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Identity and Access Management
+    verified: true
+    mappings: []
+  - id: 2-3-1
+    title: Protection of information system and processing facilities of the entity
+    description: Cybersecurity requirements for protection of information system and processing facilities of the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    verified: true
+    mappings: []
+  - id: 2-3-2
+    title: Protection of information systems and processing facilities of the entity
+    description: Cybersecurity requirements for protection of information systems and processing facilities of the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    verified: true
+    mappings: []
+  - id: 2-3-3
+    title: Protection of information systems and processing facilities of the entity
+    description: 'Cybersecurity requirements for protection of information systems and processing facilities of the entity shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    verified: true
+    mappings:
+    - rule_id: MAC-004
+      type: supporting_evidence
+      verified: false
+      source: ECC-2:2024 control 2-3-3
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-3-3-1
+    title: Protection from viruses, suspicious programs and activities, and malware on workstations and servers, using modern and advanced protection technologies and mechanisms, and securely managing them.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: MAC-003
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-3-3-1
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-3-3-2
+    title: Strict restriction on the use of external storage media and their security.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-3-3-3
+    title: Patch management for systems, applications, and devices.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-3-3-4
+    title: Centralized clock synchronization with an accurate and trusted source, such as sources provided by the Saudi Standards, Metrology and Quality Organization (SASO).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-3-4
+    title: Implementation of cybersecurity requirements for protection of the information system and process...
+    description: The implementation of cybersecurity requirements for protection of the information system and processing facilities of the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Information System and Processing Facilities Protection
+    verified: true
+    mappings: []
+  - id: 2-4-1
+    title: Protection of the email service of the entity
+    description: Cybersecurity requirements for protection of the email service of the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    verified: true
+    mappings: []
+  - id: 2-4-2
+    title: Protection of email service of the entity
+    description: Cybersecurity requirements for protection of email service of the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    verified: true
+    mappings: []
+  - id: 2-4-3
+    title: Protection of the email service of the entity
+    description: 'Cybersecurity requirements for protection of the email service of the entity shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    verified: true
+    mappings: []
+  - id: 2-4-3-1
+    title: Analyzing and filtering email messages (specifically phishing emails and spam emails) using modern and advanced email protection techniques and mechanisms.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-4-3-2
+    title: Multi-factor authentication, and defining the suitable authentication factors and their numbers as well as the suitable authentication techniques based on the result of impact assessment of authentication
+      failure and bypass for remote and webmail access.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-4-3-3
+    title: Email archiving and backup.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-4-3-4
+    title: Secure management and protection against Advanced Persistent Threats (APT), which normally utilize zero-day malware and viruses.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-4-3-5
+    title: Validation of the entity’s email service domains by using Sender Policy Framework (SPF), Domain Keys Identified Mail (DKIM), and Domain Message Authentication Reporting and Conformance (DMARC).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-4-4
+    title: Implementation of cybersecurity requirements for email service of the entity shall be periodicall...
+    description: The implementation of cybersecurity requirements for email service of the entity shall be periodically reviewed .
+    domain: Cybersecurity Defense
+    subdomain: Email Protection
+    verified: true
+    mappings: []
+  - id: 2-5-1
+    title: The entity’s network security management
+    description: Cybersecurity requirements for the entity’s network security management shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    verified: true
+    mappings: []
+  - id: 2-5-2
+    title: The entity’s network security management
+    description: Cybersecurity requirements for the entity’s network security management shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    verified: true
+    mappings: []
+  - id: 2-5-3
+    title: The entity’s network security management
+    description: 'Cybersecurity requirements for the entity’s network security management shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    verified: true
+    mappings: []
+  - id: 2-5-3-1
+    title: Logical or physical isolation and segmentation of network segments in a secure manner which is required to control relevant cybersecurity risks, using firewall and defense-in-depth principle.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-5-3-2
+    title: Isolation of production network from testing and development environment networks.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-5-3-3
+    title: Secure browsing and internet connectivity, including strict restrictions on suspicious websites, file storage/sharing websites, and remote access websites.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-5-3-4
+    title: Wireless network security and protection using secure authentication and encryption techniques and avoiding the connection of wireless networks to the entity’s internal network, except after
+      a comprehensive assessment of subsequent risks, with handling them in a way that protects the technology assets of the entity.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-5-3-5
+    title: Restricting and managing network services, protocols, and ports.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: FW-001
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-5-3-5
+      notes: Interpretive rule-to-control link (pending review).
+    - rule_id: MAC-002
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-5-3-5
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-5-3-6
+    title: Intrusion Prevention Systems (IPS).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: FW-001
+      type: supporting_evidence
+      verified: false
+      source: ECC-2:2024 control 2-5-3-6
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-5-3-7
+    title: Security of Domain Name Service (DNS).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-5-3-8
+    title: Secure management and protection of Internet browsing channel against Advanced Persistent Threats (APT), which normally utilize zero-day malware and viruses. 2-5-3-9 Protecting against Distributed
+      Denial of Service (DDoS) attacks to limit risks arising from these attacks.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-5-4
+    title: Implementation of cybersecurity requirements for the entity’s network security management
+    description: The implementation of cybersecurity requirements for the entity’s network security management shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Networks Security Management
+    verified: true
+    mappings: []
+  - id: 2-6-1
+    title: Mobile devices and BYOD security when connected to the entity’s network
+    description: Cybersecurity requirements for mobile devices and BYOD security when connected to the entity’s network shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    verified: true
+    mappings: []
+  - id: 2-6-2
+    title: Mobile devices and BYOD security of the entity
+    description: Cybersecurity requirements for mobile devices and BYOD security of the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    verified: true
+    mappings: []
+  - id: 2-6-3
+    title: Mobile devices and BYOD security of the entity
+    description: 'Cybersecurity requirements for mobile devices and BYOD security of the entity shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    verified: true
+    mappings: []
+  - id: 2-6-3-1
+    title: Separation and encryption of the entity’s data and information stored on mobile devices and BYODs.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-6-3-2
+    title: Controlled and restricted use based on the requirements of the interest of the entity's business.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-6-3-3
+    title: Deletion of the entity’s data and information stored on mobile devices and BYOD in cases of device loss or after the ending/termination of employment with the entity.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-6-3-4
+    title: Security awareness for users.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-6-4
+    title: Implementation of cybersecurity requirements for mobile devices and BYOD security of the entity
+    description: The implementation of cybersecurity requirements for mobile devices and BYOD security of the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Mobile Devices Security
+    verified: true
+    mappings: []
+  - id: 2-7-1
+    title: Protecting and handling data and information of the entity shall be identified, documented, and a...
+    description: Cybersecurity requirements for protecting and handling data and information of the entity shall be identified, documented, and approved, as per the relevant legislative and regulatory requirements.
+    domain: Cybersecurity Defense
+    subdomain: Data and Information Protection
+    verified: true
+    mappings: []
+  - id: 2-7-2
+    title: Protecting data and information of the entity shall be implemented, based on its classification l...
+    description: Cybersecurity requirements for protecting data and information of the entity shall be implemented, based on its classification level.
+    domain: Cybersecurity Defense
+    subdomain: Data and Information Protection
+    verified: true
+    mappings: []
+  - id: 2-7-3
+    title: Implementation of cybersecurity requirements for protecting data and information of the entity
+    description: The implementation of cybersecurity requirements for protecting data and information of the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Data and Information Protection
+    verified: true
+    mappings: []
+  - id: 2-8-1
+    title: Cryptography within the entity
+    description: Cybersecurity requirements for cryptography within the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Cryptography
+    verified: true
+    mappings: []
+  - id: 2-8-2
+    title: Cryptography within the entity
+    description: Cybersecurity requirements for cryptography within the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Cryptography
+    verified: true
+    mappings: []
+  - id: 2-8-3
+    title: Cryptography shall include at least the requirements in the National Cryptographic Standards, pub...
+    description: 'Cybersecurity requirements for cryptography shall include at least the requirements in the National Cryptographic Standards, published by NCA. The appropriate cryptographic standard level
+      shall be implemented based on the nature and sensitivity of the data, systems, and networks to be protected as well as the entity’s risk assessment, and as per the relevant legislative and regulatory
+      requirements, as follows:'
+    domain: Cybersecurity Defense
+    subdomain: Cryptography
+    verified: true
+    mappings: []
+  - id: 2-8-3-1
+    title: Approved cryptographic systems and solutions standards and their technical and regulatory restrictions.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cryptography
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-8-3-2
+    title: Secure management of cryptographic keys during their lifecycles.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cryptography
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: FILE-003
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-8-3-2
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-8-3-3
+    title: Encryption of data in-transit and at-rest, as per their classification and the relevant legislative and regulatory requirements.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cryptography
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: MAC-001
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-8-3-3
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-8-4
+    title: Implementation of cybersecurity requirements for cryptography within the entity
+    description: The implementation of cybersecurity requirements for cryptography within the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Cryptography
+    verified: true
+    mappings: []
+  - id: 2-9-1
+    title: Backup and recovery management within the entity
+    description: Cybersecurity requirements for backup and recovery management within the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Backup and Recovery Management
+    verified: true
+    mappings: []
+  - id: 2-9-2
+    title: Backup and recovery management within the entity
+    description: Cybersecurity requirements for backup and recovery management within the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Backup and Recovery Management
+    verified: true
+    mappings: []
+  - id: 2-9-3
+    title: Backup and recovery management
+    description: 'Cybersecurity requirements for backup and recovery management shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Backup and Recovery Management
+    verified: true
+    mappings: []
+  - id: 2-9-3-1
+    title: Scope of backups to cover critical technology and information assets.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Backup and Recovery Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-9-3-2
+    title: Ability to perform quick recovery of data and systems after cybersecurity incidents.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Backup and Recovery Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-9-3-3
+    title: Periodic testing for the effectiveness of backup recovery.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Backup and Recovery Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-9-4
+    title: Implementation of cybersecurity requirements for backup and recovery management within the entity
+    description: The implementation of cybersecurity requirements for backup and recovery management within the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Backup and Recovery Management
+    verified: true
+    mappings: []
+  - id: 2-10-1
+    title: Technical vulnerabilities management within the entity
+    description: Cybersecurity requirements for technical vulnerabilities management within the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    verified: true
+    mappings: []
+  - id: 2-10-2
+    title: Technical vulnerabilities management within the entity
+    description: Cybersecurity requirements for technical vulnerabilities management within the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    verified: true
+    mappings: []
+  - id: 2-10-3
+    title: Technical vulnerabilities management
+    description: 'Cybersecurity requirements for technical vulnerabilities management shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    verified: true
+    mappings: []
+  - id: 2-10-3-1
+    title: Periodic vulnerabilities assessment and detection.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-10-3-2
+    title: Vulnerabilities classification based on their severities.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-10-3-3
+    title: Vulnerabilities remediation based on their classification and the associated cyber risks.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-10-3-4
+    title: Patch management to remediate vulnerabilities, and ensuring the integrity and effectiveness of these updates and fixes are verified using a non-production environment before being applied.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    level: sub-control
+    verified: true
+    mappings:
+    - rule_id: MAC-005
+      type: partial
+      verified: false
+      source: ECC-2:2024 control 2-10-3-4
+      notes: Interpretive rule-to-control link (pending review).
+  - id: 2-10-3-5
+    title: Communication and subscription with trusted resources for new and up-to- date vulnerabilities.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-10-4
+    title: Implementation of cybersecurity requirements for technical vulnerabilities management within the ...
+    description: The implementation of cybersecurity requirements for technical vulnerabilities management within the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Vulnerabilities Management
+    verified: true
+    mappings: []
+  - id: 2-11-1
+    title: Penetration testing within the entity
+    description: Cybersecurity requirements for penetration testing within the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Penetration Testing
+    verified: true
+    mappings: []
+  - id: 2-11-2
+    title: Penetration testing within the entity
+    description: Cybersecurity requirements for penetration testing within the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Penetration Testing
+    verified: true
+    mappings: []
+  - id: 2-11-3
+    title: Penetration testing
+    description: 'Cybersecurity requirements for penetration testing shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Penetration Testing
+    verified: true
+    mappings: []
+  - id: 2-11-3-1
+    title: Scope of penetration testing to include all externally provided services (via the Internet) and their technical components, including infrastructure, websites, web applications, smartphone and
+      tablet applications, email, and remote access.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Penetration Testing
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-11-3-2
+    title: Conducting penetration tests periodically.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Penetration Testing
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-11-4
+    title: Implementation of cybersecurity requirements for penetration testing
+    description: The implementation of cybersecurity requirements for penetration testing shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Penetration Testing
+    verified: true
+    mappings: []
+  - id: 2-12-1
+    title: Cybersecurity event logs and monitoring management within the entity
+    description: Cybersecurity requirements for cybersecurity event logs and monitoring management within the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    verified: true
+    mappings: []
+  - id: 2-12-2
+    title: Cybersecurity event logs and monitoring management within the entity
+    description: Cybersecurity requirements for cybersecurity event logs and monitoring management within the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    verified: true
+    mappings: []
+  - id: 2-12-3
+    title: Cybersecurity event logs and monitoring management
+    description: 'Cybersecurity requirements for cybersecurity event logs and monitoring management shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    verified: true
+    mappings: []
+  - id: 2-12-3-1
+    title: Activation of cybersecurity event logs for critical information assets within the entity.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-12-3-2
+    title: Activation of cybersecurity event logs for critical and privileged accounts accessing information assets as well as for remote access events within the entity.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-12-3-3
+    title: Identification of Security Information and Event Management (SIEM) techniques required for cybersecurity event logs collection.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-12-3-4
+    title: Continuous monitoring of cybersecurity event logs.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-12-3-5
+    title: Retention period of cybersecurity event logs (shall be at least 12 months).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-12-4
+    title: Implementation of cybersecurity requirements for cybersecurity event logs and monitoring manageme...
+    description: The implementation of cybersecurity requirements for cybersecurity event logs and monitoring management within the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Event Logs and Monitoring Management
+    verified: true
+    mappings: []
+  - id: 2-13-1
+    title: Requirements for cybersecurity incident and threat management within the entity
+    description: Requirements for cybersecurity incident and threat management within the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    verified: true
+    mappings: []
+  - id: 2-13-2
+    title: Requirements for cybersecurity incident and threat management within the entity
+    description: Requirements for cybersecurity incident and threat management within the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    verified: true
+    mappings: []
+  - id: 2-13-3
+    title: Requirements for cybersecurity incident and threat management
+    description: 'Requirements for cybersecurity incident and threat management shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    verified: true
+    mappings: []
+  - id: 2-13-3-1
+    title: Cybersecurity incident response plans and escalation procedures.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-13-3-2
+    title: Cybersecurity incident classification.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-13-3-3
+    title: Reporting cybersecurity incidents to the NCA.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-13-3-4
+    title: Sharing cybersecurity incident notifications, threat intelligence, penetration indicators, and incident reports with the NCA.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-13-3-5
+    title: Collecting and handling threat intelligence feeds.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-13-4
+    title: Implementation of cybersecurity requirements for incident and threat management within the entity
+    description: The implementation of cybersecurity requirements for incident and threat management within the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Cybersecurity Incident and Threat Management
+    verified: true
+    mappings: []
+  - id: 2-14-1
+    title: Protection of information and technology assets of the entity against unauthorized physical acces...
+    description: Cybersecurity requirements for protection of information and technology assets of the entity against unauthorized physical access, loss, theft, and damage shall be identified, documented,
+      and approved.
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-2
+    title: Protection of information and technology assets of the entity against unauthorized physical acces...
+    description: Cybersecurity requirements for protection of information and technology assets of the entity against unauthorized physical access, loss, theft, and damage shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-3
+    title: Protection of information and technology assets of the entity against unauthorized physical acces...
+    description: 'Cybersecurity requirements for protection of information and technology assets of the entity against unauthorized physical access, loss, theft, and damage shall include the following as
+      a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-3-1
+    title: Authorized access to critical areas within the entity (e.g. the entity’s data center, disaster recovery center, critical information processing facilities, security surveillance center, network
+      connection rooms, technical device and equipment supply areas, etc.).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-3-2
+    title: Access and monitoring logs (CCTV).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-3-3
+    title: Protection of access and monitoring log information.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-3-4
+    title: Security of the destruction and re-use of physical assets that hold classified information (including paper documents and storage media).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-3-5
+    title: Security of devices and equipment inside and outside the entity’s facilities.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-14-4
+    title: Protection of information and technology assets of the entity against unauthorized physical acces...
+    description: Cybersecurity requirements for protection of information and technology assets of the entity against unauthorized physical access, loss, theft, and damage shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Physical Security
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Physical security (facilities/CCTV) — not assessable via technical configuration review.
+  - id: 2-15-1
+    title: Protection of external web applications of the entity
+    description: Cybersecurity requirements for protection of external web applications of the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    verified: true
+    mappings: []
+  - id: 2-15-2
+    title: Protection of external web applications of the entity
+    description: Cybersecurity requirements for protection of external web applications of the entity shall be implemented.
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    verified: true
+    mappings: []
+  - id: 2-15-3
+    title: Protection of external web applications of the entity
+    description: 'Cybersecurity requirements for protection of external web applications of the entity shall include the following as a minimum:'
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    verified: true
+    mappings: []
+  - id: 2-15-3-1
+    title: Use of web application firewall.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-15-3-2
+    title: Adoption of the multi-tier architecture principle.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-15-3-3
+    title: Use of secure protocols (e.g. HTTPS).
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-15-3-4
+    title: Clarification of the secure usage policy for users.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-15-3-5
+    title: User authentication, and the suitable authentication factors and their numbers as well as the authentication techniques shall be defined based on the result of impact assessment of authentication
+      failure and bypass for users’ access.
+    description: ''
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 2-15-4
+    title: Protection of web applications of the entity
+    description: Cybersecurity requirements for protection of web applications of the entity shall be periodically reviewed.
+    domain: Cybersecurity Defense
+    subdomain: Web Application Security
+    verified: true
+    mappings: []
+- id: '3'
+  name: Cybersecurity Resilience
+  controls:
+  - id: 3-1-1
+    title: Business continuity management within the entity
+    description: Cybersecurity requirements for business continuity management within the entity shall be identified, documented, and approved.
+    domain: Cybersecurity Resilience
+    subdomain: Cybersecurity Resilience Aspects of Business Continuity Management (BCM)
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Business continuity management — not assessable via technical configuration review.
+  - id: 3-1-2
+    title: Business continuity management within the entity
+    description: Cybersecurity requirements for business continuity management within the entity shall be implemented.
+    domain: Cybersecurity Resilience
+    subdomain: Cybersecurity Resilience Aspects of Business Continuity Management (BCM)
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Business continuity management — not assessable via technical configuration review.
+  - id: 3-1-3
+    title: Business continuity management within the entity
+    description: 'Cybersecurity requirements for business continuity management within the entity shall include the following as a minimum:'
+    domain: Cybersecurity Resilience
+    subdomain: Cybersecurity Resilience Aspects of Business Continuity Management (BCM)
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Business continuity management — not assessable via technical configuration review.
+  - id: 3-1-3-1
+    title: Ensuring the continuity of cybersecurity systems and procedures.
+    description: ''
+    domain: Cybersecurity Resilience
+    subdomain: Cybersecurity Resilience Aspects of Business Continuity Management (BCM)
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Business continuity management — not assessable via technical configuration review.
+  - id: 3-1-3-2
+    title: Developing plans for response to cybersecurity incidents that may affect the entity’s business continuity.
+    description: ''
+    domain: Cybersecurity Resilience
+    subdomain: Cybersecurity Resilience Aspects of Business Continuity Management (BCM)
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Business continuity management — not assessable via technical configuration review.
+  - id: 3-1-3-3
+    title: Developing disaster recovery plans.
+    description: ''
+    domain: Cybersecurity Resilience
+    subdomain: Cybersecurity Resilience Aspects of Business Continuity Management (BCM)
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Business continuity management — not assessable via technical configuration review.
+  - id: 3-1-4
+    title: Business continuity management within the entity
+    description: Cybersecurity requirements for business continuity management within the entity shall be periodically reviewed.
+    domain: Cybersecurity Resilience
+    subdomain: Cybersecurity Resilience Aspects of Business Continuity Management (BCM)
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Business continuity management — not assessable via technical configuration review.
+- id: '4'
+  name: Third-Party and Cloud Computing Cybersecurity
+  controls:
+  - id: 4-1-1
+    title: The entity’s contracts and agreements with third parties
+    description: Cybersecurity requirements for the entity’s contracts and agreements with third parties shall be identified, documented, and approved.
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-2
+    title: Contracts and agreements with third parties, e.g. Service Level Agreement (SLA), which, if impair...
+    description: 'Cybersecurity requirements for contracts and agreements with third parties, e.g. Service Level Agreement (SLA), which, if impaired, may affect the entity''s data or services shall include
+      the following as a minimum:'
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-2-1
+    title: Clauses of non-disclosure and the secure removal of the entity’s data by the third party upon the end of service.
+    description: ''
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-2-2
+    title: Communication procedures in case of the occurrence of a cybersecurity incident.
+    description: ''
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-2-3
+    title: Obligating the third party to apply the entity’s cybersecurity requirements and policies and the relevant legislative and regulatory requirements.
+    description: ''
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-3
+    title: Contracts and agreements with third parties providing IT or cybersecurity outsourcing or managed ...
+    description: 'Cybersecurity requirements for contracts and agreements with third parties providing IT or cybersecurity outsourcing or managed services shall include the following as a minimum:'
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-3-1
+    title: Conducting a cybersecurity risk assessment and ensuring the availability of risk mitigation controls before signing contracts and agreements or upon making changes to the relevant legislative
+      and regulatory requirements.
+    description: ''
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-3-2
+    title: Cybersecurity managed service centers for monitoring and operations which use remote access shall be fully located in the Kingdom of Saudi Arabia.
+    description: ''
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    level: sub-control
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-1-4
+    title: Third parties
+    description: Cybersecurity requirements for third parties shall be periodically reviewed.
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Third-Party Cybersecurity
+    verified: true
+    mappings: []
+    technical: false
+    excluded_reason: Third-party/vendor management — organizational, not a technical configuration check.
+  - id: 4-2-1
+    title: Use of cloud computing and hosting services
+    description: Cybersecurity requirements for use of cloud computing and hosting services shall be identified, documented, and approved.
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Cloud Computing and Hosting Cybersecurity
+    verified: true
+    mappings: []
+  - id: 4-2-2
+    title: The cloud computing and hosting services within the entity
+    description: Cybersecurity requirements for the cloud computing and hosting services within the entity shall be implemented.
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Cloud Computing and Hosting Cybersecurity
+    verified: true
+    mappings: []
+  - id: 4-2-3
+    title: In accordance with the relevant legislative and regulatory requirements, and in addition to the a...
+    description: 'In accordance with the relevant legislative and regulatory requirements, and in addition to the applicable controls in the Main Domains (1), (2), and (3) and Subdomain (4.1) that are necessary
+      to protect the entity’s data or services provided thereto, cybersecurity requirements for use of cloud computing and hosting services shall include the following as a minimum:'
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Cloud Computing and Hosting Cybersecurity
+    verified: true
+    mappings: []
+  - id: 4-2-3-1
+    title: Protection of entity’s data by cloud and hosting service providers in accordance with its classification level and returning data (in a usable format) upon service completion.
+    description: ''
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Cloud Computing and Hosting Cybersecurity
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 4-2-3-2
+    title: Separation of the entity’s environment (especially virtual servers) from environments of other entities within the cloud computing service provider.
+    description: ''
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Cloud Computing and Hosting Cybersecurity
+    level: sub-control
+    verified: true
+    mappings: []
+  - id: 4-2-4
+    title: 'Cloud computing and hosting services shall be periodically reviewed. Appendices Appendix (A): Ter...'
+    description: 'Cybersecurity requirements for cloud computing and hosting services shall be periodically reviewed. Appendices Appendix (A): Terms and Definitions Table (2) below highlights some of the
+      terms and their definitions which were used in this document. TABLE 2 TERMS AND DEFINITION Term Definition Advanced Persistent Threats (APT) Protection Protection against advanced threats that use
+      invisible techniques to gain unauthorized access to technology systems and networks and stay as long as possible by circumventing detection and protection tools. To accomplish this, zero-day malware
+      are usually used in these techniques. Asset Any tangible or intangible thing of value to the entity. There are many types of assets, and some of which are obvious, such as persons, machinery, facilities,
+      patents, software, and services. The term could also include less obvious things, such as information and characteristics (such as the entity’s reputation and public image, as well as skills and knowledge).
+      Attack Any kind of malicious activity aimed at gaining unauthorized access to, collecting, disabling, preventing, destroying, or sabotaging information system resources or the information itself.
+      Audit Independent review and examination of records and activities, in order to assess the effectiveness of cybersecurity controls and to ensure compliance with policies, operational procedures, standards,
+      and relevant legislative and regulatory requirements. Authentication Verification of the user''s identity, process, or device, which is often a prerequisite for allowing access to resources on the
+      system. Authorization The property of identifying and verifying the rights/licenses of the user to access the information and technology assets and resources of the entity and allowing access based
+      on the user’s rights/licenses previously defined. Availability  Ensuring timely access and use of information, data, systems, and applications. Backup  Files, devices, data, and procedures available
+      for use in case of failure or loss, or in case of deletion or suspension of their original copies. Bring Your Own Device (BYOD) This term refers to an entity''s policy that allows (in whole or in
+      part) its personnel to bring their personal devices (laptops, tablets, and smartphones) to their workplace within the entity and use such devices to access the entity’s networks, information, applications,
+      and systems to which access is restricted. Change Management A service management system that ensures a systematic and proactive approach using effective standard methods and procedures (for example,
+      change in the entity’s infrastructure and networks, etc.). Change management helps all stakeholders, including individuals and teams alike, move from their current state to the next desired state.
+      It also helps reduce the impact of relevant incidents on service. Closed-Circuit Television (CCTV) CCTV, also known as video surveillance, uses video cameras to transmit a signal to a specific location
+      on a limited set of screens.  This term is often used to refer to the surveillance technique employed in areas that require monitoring due to the importance of physical security. Cloud Computing A
+      model to enable on-demand access to a shared pool of information technology resources (e.g. networks, servers, storage, applications, and services) that can be rapidly provided and launched with minimal
+      operational management effort and service setup intervention/interaction from the service provider. Cloud computing allows users to access technology-based services over a cloud computing network
+      without needing to know or control the technology infrastructure that supports them. Cloud computing models are composed of five essential characteristics: on-demand self-service, broad network access,
+      resource pooling, rapid elasticity, and measured service. There are three models of cloud computing services: Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service
+      (IaaS). Moreover, according to the nature of access, there are four cloud computing models: Public Cloud Computing, Community Cloud Computing, Private Cloud Computing, and Hybrid Cloud Computing.
+      Compromise Disclosure or acquisition of information not authorized to be leaked to or obtained by third parties, or violation of the entity''s cybersecurity policy through the disclosure, alteration,
+      sabotage, or loss of anything, either intentionally or unintentionally. Compromise also means the disclosure, acquisition, leakage, alteration, or use of sensitive data without authorization (including
+      cryptographic keys and other critical cybersecurity standards). Sensitive Data/Information Information (or data) that is highly sensitive and important, as classified by the entity, and intended for
+      their use. One of the methods that can be used to classify this type of information is to measure the extent of damage when it is disclosed, accessed in an unauthorized manner, lost, or sabotaged,
+      as this may result in material or moral damage to the entity or its clients, affecting the lives of persons associated with that information, or affecting and damaging the State security, national
+      economy, or national capacities. Sensitive information includes all information whose unauthorized disclosure, loss, or sabotage results in accountability or statutory penalties. Confidentiality Maintaining
+      authorized restrictions on access to and disclosure of information, including means of privacy/personal information protection. Critical National Infrastructure (CNI) Essential elements of infrastructure
+      (i.e. assets, facilities, systems, networks, processes, and key personnel who operate and process them) whose loss or compromise may result in:  Significant negative impact on the availability, integration,
+      or delivery of basic services, including services whose integrity could, if compromised, result in serious loss of property, lives, and/or injuries, taking into account significant national-level
+      economic and/or social impacts.  Significant impact on national security, national defense, and/or State economy or national capacities. Cryptography It is also called (cryptology). It refers to
+      rules that include the principles, methods, and means of storing and transmitting data or information in a particular form, in order to conceal its semantic content and prevent unauthorized use or
+      prevent undetected modification, so that only the concerned persons can read and process them. Cyber-Attack An intentional attempt to impact cybersecurity negatively, whether successful or not. Cyber
+      Risks Risks that harm the entity’s business operations (including the entity’s vision, mission, management, image, or reputation), assets, individuals, other entities, or the State due to unauthorized
+      access, use, disclosure, disruption, modification, or damage of information and/or information systems. Cybersecurity Pursuant to the provisions of the NCA''s Statute issued by Royal Order No. 6801,
+      dated 11/02/1439H., cybersecurity is the protection of networks, IT systems, operational technologies systems, their hardware and software components, services, and the data they contain, from any
+      unauthorized penetration, disruption, modification, access, use, or exploitation.  The concept of cybersecurity also encompasses information security, digital security, and the like. Cybersecurity
+      Resilience The overall ability of  entities to withstand cyber events and, where harm is caused, recover from them. Cyberspace The interconnected network of IT infrastructure, including the Internet,
+      communication networks, computer systems, Internet-connected devices, and associated processors and control devices. The term can also refer to a virtual world or domain, such as experimental phenomenon
+      or abstract concept. Data and Information Classification Determining the sensitivity level of data and information which gives rise to security controls for each classification level. Data and information
+      sensitivity levels are set according to predefined categories, where data and information is created, modified, improved, stored, or transmitted. The classification level is an indicator of the value
+      or significance of data and information to the entity. Data Archiving The process of transferring data that is no longer actively used to a separate storage device for long-term retention. Archive
+      data consists of older data that is still important to the entity and may be needed for future reference, as well as data that shall be retained for legal and regulatory compliance purposes. Defense-in-Depth
+      A concept of information assurance where multiple levels of security controls are used (as a defense) in the IT/OT system. Disaster Recovery Programs, activities, and plans designed to restore the
+      entity’s critical business functions and services to an acceptable state, following exposure to cyber-attacks or disruption of such functions or services. Domain Name System (DNS) A technical system
+      that uses a database distributed over the network and/or the Internet to allow the translation of domain names into IP addresses and vice versa, in order to identify service addresses, such as web
+      and e-mail servers. Effectiveness A degree whereby a planned impact is achieved. Planned activities are considered effective if they are already implemented, and planned results are considered effective
+      if they are already achieved. The Key Performance Indicators (KPIs) can be used to measure and evaluate the effectiveness level. Efficiency Relationship between the results achieved (outputs) and
+      the resources used (inputs). The efficiency of a process or system can be enhanced by achieving more results using the same resources (inputs) or even less. Event An event related to the cybersecurity
+      state of a network, a system, a service, data, or any other digital device. Hyper Text Transfer Protocol Secure (HTTPS) A protocol that uses encryption to secure the web pages and data when they are
+      transmitted over the network. It is a secure version of the Hyper Text Transfer Protocol (HTTP). Identification A means for verifying the user’s identity, process, or device, which is usually a prerequisite
+      for granting access to system resources. Incident An event that occurred and negatively impacted cybersecurity, whether intentional or unintentional. Integrity Protection against unauthorized modification
+      or destruction of information, including ensuring information non-repudiation and reliability. International Requirements International requirements are those developed by an international entity
+      or organization for regulatory use worldwide (e.g. SWIFT, PCI, etc.). Intrusion Prevention System (IPS) A system with intrusion detection capabilities, as well as capabilities to prevent and stop
+      suspicious or potential activities and incidents. Key Performance Indicator (KPI) A type of performance measurement tools that evaluate the success of an activity or an entity in achieving specific
+      objectives. Labeling Display of information (with specific and standard naming and coding) on the entity’s assets (such as devices, applications, documents, etc.) to refer to some information on the
+      classification, ownership, and type of the asset and other asset management information. Least Privilege A basic principle in cybersecurity that aims at granting users only access privileges they
+      need to fulfill their official responsibilities. Malware A program that infects systems, usually covertly, with the intent of compromising the confidentiality, integrity, accuracy, or availability
+      of data, applications, or operating system. Multi-Factor Authentication (MFA) A security system that verifies user identity, using several authentication factors through authentication technique.
+      Authentication factors are:  Knowledge (something only the user knows “like using password technique”).  Possession (something only owned by the user “such as using technique like a program, device
+      generating random numbers or SMSs” for login records, which are called: One-Time-Password).  Inherent characteristics (characteristics of the user only, such as using fingerprint or face recognition
+      techniques). Multi-tier Architecture An architecture or structure that applies a client-server approach in which the functional process logic, data access, data storage, and user interface are developed
+      and maintained as separate units on separate platforms. Need-to-Know and Need-to-Use Restrictions on data, which is considered confidential, unless a person has a specific need to know for official
+      business duties. Offline/Offsite Backup A backup of databases, and settings of systems, applications, and devices when the copy is offline and cannot be updated. Typically, backup tapes are utilized
+      for offsite backup. Online Backup A storage method whereby the backup is regularly taken on a remote server over a network (either within the entity’s network or hosted by a service provider). Organization
+      Staff Individuals who work for the entity (including official employees, temporary employees, and contractors). Outsourcing Obtaining goods or services by contracting with a supplier or a service
+      provider. Patch Supporting data packages used to upgrade, fix, or improve computer operating system, software, or applications. This includes fixing security vulnerabilities and other bugs. Such patches
+      are usually called fixes, bug fixes, and usability or performance improvements. Penetration Testing Testing a computer system, network, web application, or mobile application to find vulnerabilities
+      that can be exploited by an attacker. Phishing Emails An attempt to obtain confidential information, such as usernames, passwords, or credit card details, often for malicious reasons and intentions,
+      by disguising as a trustworthy entity in emails. Physical Security Physical security describes security measures designed to prevent unauthorized access to the entity’s facilities, equipment, and
+      resources, and to protect individuals and property against damage or harm (such as espionage, theft, or terrorist attacks). Physical security involves the use of multiple tiers of interconnected systems,
+      including CCTV, security guards, security limits, locks, access control systems, and many other technologies. Policy A document with clauses specifying a general obligation, direction, or intent as
+      formally expressed by the Authorized Official of the entity . Cybersecurity policy is a document with clauses reflecting official commitment of the senior management of the entity to implement and
+      improve the cybersecurity program within the entity. Such policy includes the entity’s objectives relating to the cybersecurity program, as well as its controls, requirements, and improvement and
+      development mechanisms. Privileged Access Management The process of managing high-risk authorizations on the entity’s systems, which often need special handling to minimize risks that may arise from
+      the misuse thereof. Procedure A document with a detailed description of the steps necessary to perform specific operations or activities in compliance with relevant standards and policies. Procedures
+      are defined as part of operations. Process A set of interrelated or interactive activities that translates inputs into outputs. Such activities are influenced by the entity’s policies. Recovery A
+      procedure or process to restore or control something that is suspended, damaged, stolen, or lost. Retention The time period during which information, data, event logs, or backups shall be retained,
+      regardless of the form (e.g. paper, electronic, etc.). Secure Coding Standards A practice for the development of computer software and applications in a way that protects against exposure to cybersecurity
+      vulnerabilities in software and applications. Secure Configuration and Hardening Protecting, hardening, and configuring the settings of computers, systems, applications, network devices, and security
+      devices to resist cyber-attacks, such as disabling or changing manufacturing and default accounts, disabling unused services, and disabling unused network ports. Security Information and Event Management
+      (SIEM) A system that manages and analyzes security event logs in real time, in order to monitor threats and analyze the results of interrelated rules for event logs and reports on logs data, and incident
+      response. Security Testing A process intended to ensure that a modified or new system or application, has the appropriate security controls and protection, is free from any security vulnerabilities
+      that might compromise other systems and applications or lead to misusing the system or application or information thereon, and to maintain the functionality of the system or application as intended.
+      Security-by-Design A methodology for developing systems and software and designing networks to free them from cybersecurity vulnerabilities and weaknesses and make them impervious to cyber-attack
+      as much as possible through several measures, such as continuous testing, authentication safeguards, and adherence to best programming and design practices. Segregation of Duties A key cybersecurity
+      principle that aims at minimizing errors and fraud during the stages of processing specific tasks, by ensuring the presence of more than one individual to complete a task with different privileges.
+      Sender Policy Framework A method to verify that the email server used for sending emails belongs to the sender''s domain. Third-Party Any entity that serves as a party to contractual relationship
+      to provide goods or services (including suppliers and service providers). Threat Anything with the potential to impact cybersecurity negatively. Threat Intelligence It provides and analyzes organized
+      information on recent, current, and potential attacks that could pose a cyber threat to the entity. Vulnerability A weakness in any information technology asset (such as software and systems) or a
+      process, control, or anything, that could be exploited to negatively impact cybersecurity. Web Application Firewall A protection system that is installed before web applications to minimize risks
+      that may arise from attack attempts against web applications. Zero-Day Malware Previously unknown malware that has been produced or disseminated recently and is normally hard to be detected by prior
+      knowledge of malware (Signature-based Protection). Appendix (B): List of the Abbreviations Table (3) below shows some of the abbreviations and their meanings which are used in this document. TABLE
+      3 LIST OF ABBREVIATIONS Abbreviation Full Term APT Advanced Persistent Threat BCM Business Continuity Management BYOD Bring Your Own Device CCTV Closed-Circuit Television CNI Critical National Infrastructure
+      DDoS Distributed Denial of Service Attack DKIM Domain Keys Identified Mail DMARC Domain Message Authentication Reporting and Conformance DNS Domain Name System HTTPS Hyper Text Transfer Protocol Secure
+      ICT Information and Communication Technology IT Information Technology MFA Multi-Factor Authentication OT Operational Technology SIEM Security Information and Event Management SLA Service Level Agreement
+      SPF Sender Policy Framework Appendix (C): List of Updates Table (4) below illustrates the updates on the previous version (i.e., ECC-1:2018). TABLE 4 LIST OF UPDATES'
+    domain: Third-Party and Cloud Computing Cybersecurity
+    subdomain: Cloud Computing and Hosting Cybersecurity
+    verified: true
+    mappings: []

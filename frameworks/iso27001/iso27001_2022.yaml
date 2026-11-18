@@ -1,0 +1,129 @@
+# ISO/IEC 27001:2022 Annex A — technical subset (mapping types direct/partial/supporting_evidence).
+id: iso27001
+name: ISO/IEC 27001
+version: 2022 (Annex A)
+description: Information security management system requirements with Annex A controls. This subset maps MIJHAR technical checks to relevant Annex A controls.
+mapping_note: Annex A identifiers/titles are from ISO/IEC 27001:2022. Rule-to-control links are interpretive and must be reviewed by a qualified assessor.
+domains:
+- id: A5
+  name: Organizational controls
+  controls:
+  - id: A.5.17
+    title: Authentication information
+    verified: true
+    mappings:
+    - rule_id: SSH-002
+      type: partial
+      source: ISO/IEC 27001:2022 A.5.17
+      notes: SSH password authentication is one facet of authentication controls.
+    - rule_id: SSH-003
+      type: partial
+      source: ISO/IEC 27001:2022 A.5.17
+    - rule_id: PASS-001
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.5.17
+    - rule_id: FILE-001
+      type: partial
+      source: ISO/IEC 27001:2022 A.5.17
+    - rule_id: MAC-006
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.5.17
+  - id: A.5.15
+    title: Access control
+    verified: true
+    mappings:
+    - rule_id: SSH-001
+      type: partial
+      source: ISO/IEC 27001:2022 A.5.15
+      notes: Restricting root login is a privileged-access control.
+    - rule_id: FILE-002
+      type: partial
+      source: ISO/IEC 27001:2022 A.5.15
+  - id: A.5.24
+    title: Information security incident management planning and preparation
+    verified: true
+    mappings:
+    - rule_id: FW-001
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.5.24
+    technical: false
+    excluded_reason: Incident management planning — organizational/process, not a technical configuration check.
+- id: A8
+  name: Technological controls
+  controls:
+  - id: A.8.1
+    title: User endpoint devices
+    verified: true
+    mappings:
+    - rule_id: MAC-001
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.8.1
+      notes: Endpoint encryption supports user endpoint device controls.
+    - rule_id: MAC-002
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.8.1
+  - id: A.8.2
+    title: Privileged access rights
+    verified: true
+    mappings:
+    - rule_id: SSH-001
+      type: direct
+      source: ISO/IEC 27001:2022 A.8.2
+      notes: Disabling direct root SSH login directly supports least-privilege.
+    - rule_id: FILE-002
+      type: partial
+      source: ISO/IEC 27001:2022 A.8.2
+  - id: A.8.7
+    title: Protection against malware
+    verified: true
+    mappings:
+    - rule_id: MAC-003
+      type: partial
+      source: ISO/IEC 27001:2022 A.8.7
+      notes: Gatekeeper restricts execution of unapproved software.
+  - id: A.8.8
+    title: Management of technical vulnerabilities
+    verified: true
+    mappings:
+    - rule_id: MAC-005
+      type: partial
+      source: ISO/IEC 27001:2022 A.8.8
+      notes: Automatic updates are one element of vulnerability management.
+  - id: A.8.9
+    title: Configuration management
+    verified: true
+    mappings:
+    - rule_id: MAC-004
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.8.9
+    - rule_id: FILE-003
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.8.9
+  - id: A.8.20
+    title: Networks security
+    verified: true
+    mappings:
+    - rule_id: FW-001
+      type: partial
+      source: ISO/IEC 27001:2022 A.8.20
+    - rule_id: MAC-002
+      type: supporting_evidence
+      source: ISO/IEC 27001:2022 A.8.20
+  - id: A.8.22
+    title: Segregation of networks
+    verified: true
+    mappings:
+    - rule_id: FW-001
+      type: partial
+      source: ISO/IEC 27001:2022 A.8.22
+  - id: A.8.24
+    title: Use of cryptography
+    verified: true
+    mappings:
+    - rule_id: MAC-001
+      type: partial
+      source: ISO/IEC 27001:2022 A.8.24
+      notes: FileVault is full-disk encryption at rest.
+    - rule_id: FILE-003
+      type: partial
+      source: ISO/IEC 27001:2022 A.8.24

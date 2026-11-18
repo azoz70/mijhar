@@ -1,0 +1,61 @@
+# MIJHAR Linux SSH hardening rules.
+# String values are quoted to avoid YAML 1.1 boolean coercion.
+- id: SSH-001
+  title: SSH root login is disabled
+  description: Direct root login over SSH should be disabled; use a normal account with sudo instead.
+  severity: high
+  platforms: [linux]
+  required_components: [ssh]
+  assessment_type: configuration
+  technical_assessability: assessable
+  rule_version: "1.1"
+  enabled: true
+  technical_impact: PermitRootLogin 'yes' or 'without-password' allows privileged remote sessions.
+  security_impact: Brute-force or credential-compromise attacks gain root directly.
+  remediation: Set 'PermitRootLogin no' (or 'prohibit-password') in /etc/ssh/sshd_config and reload sshd.
+  references:
+    cis: ["5.2.8"]
+  check:
+    fact: ssh.permit_root_login
+    operator: not_in
+    value: ["yes", "without-password"]
+
+- id: SSH-002
+  title: SSH password authentication is disabled
+  description: SSH should use key-based authentication rather than passwords where feasible.
+  severity: medium
+  platforms: [linux]
+  required_components: [ssh]
+  assessment_type: configuration
+  technical_assessability: assessable
+  rule_version: "1.1"
+  enabled: true
+  technical_impact: Password authentication is vulnerable to brute force and credential stuffing.
+  security_impact: Increased risk of remote compromise via weak or reused credentials.
+  remediation: Set 'PasswordAuthentication no' after provisioning keys.
+  references:
+    cis: ["5.2.4"]
+  check:
+    fact: ssh.password_authentication
+    operator: equals
+    value: "no"
+
+- id: SSH-003
+  title: SSH empty passwords are disabled
+  description: Accounts must not be able to authenticate over SSH with an empty password.
+  severity: critical
+  platforms: [linux]
+  required_components: [ssh]
+  assessment_type: configuration
+  technical_assessability: assessable
+  rule_version: "1.1"
+  enabled: true
+  technical_impact: Empty passwords allow passwordless remote login.
+  security_impact: Trivially exploitable remote access.
+  remediation: Set 'PermitEmptyPasswords no' in /etc/ssh/sshd_config.
+  references:
+    cis: ["5.2.9"]
+  check:
+    fact: ssh.permit_empty_passwords
+    operator: equals
+    value: "no"

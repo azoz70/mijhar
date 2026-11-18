@@ -1,0 +1,20 @@
+# MIJHAR Linux firewall rules.
+- id: FW-001
+  title: A host firewall is active
+  description: At least one host firewall (ufw or firewalld) should be active.
+  severity: high
+  platforms: [linux]
+  required_components: [firewall]
+  assessment_type: configuration
+  technical_assessability: assessable
+  rule_version: "1.1"
+  enabled: true
+  technical_impact: No active firewall exposes all listening services to the network.
+  security_impact: Increased network attack surface.
+  remediation: Enable ufw ('ufw enable') or start firewalld ('systemctl enable --now firewalld').
+  references:
+    cis: ["3.5.1.1"]
+  check:
+    fact: firewall.any_active
+    operator: equals
+    value: true

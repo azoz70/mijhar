@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+*.so
+.venv/
+venv/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.coverage.*
+
+# Tooling
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# MIJHAR runtime data
+*.db
+*.sqlite3
+.mijhar/
+.mijhar-demo/
+reports_out/
+sample_report.json
+sample_report.html
+*.report.html
+*.report.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp

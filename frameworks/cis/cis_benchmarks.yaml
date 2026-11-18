@@ -1,0 +1,150 @@
+# CIS Benchmarks — representative technical subset (mapping types direct/partial/supporting_evidence).
+id: cis
+name: CIS Benchmarks
+version: Representative subset (Linux + macOS); verify against licensed benchmark
+description: CIS Benchmarks provide prescriptive hardening recommendations. This subset maps MIJHAR automated checks to commonly referenced CIS section numbers.
+mapping_note: Section numbers/titles are drawn from public CIS benchmark summaries; the full benchmark text is licensed by the Center for Internet Security and is not redistributed here. Verify exact section
+  numbering against the specific OS benchmark version you assess against.
+controls:
+- id: 5.2.8
+  title: Ensure SSH root login is disabled
+  level: Level 1
+  domain: Access, Authentication and Authorization
+  verified: true
+  mappings:
+  - rule_id: SSH-001
+    type: direct
+    verified: true
+    source: CIS Linux Benchmark — SSH Server Configuration
+- id: 5.2.4
+  title: Ensure SSH password authentication is disabled
+  level: Level 1
+  domain: Access, Authentication and Authorization
+  verified: true
+  mappings:
+  - rule_id: SSH-002
+    type: direct
+    verified: true
+    source: CIS Linux Benchmark — SSH Server Configuration
+- id: 5.2.9
+  title: Ensure SSH PermitEmptyPasswords is disabled
+  level: Level 1
+  domain: Access, Authentication and Authorization
+  verified: true
+  mappings:
+  - rule_id: SSH-003
+    type: direct
+    verified: true
+    source: CIS Linux Benchmark — SSH Server Configuration
+- id: 5.4.1.1
+  title: Ensure password expiration is 365 days or less
+  level: Level 1
+  domain: Access, Authentication and Authorization
+  verified: true
+  mappings:
+  - rule_id: PASS-001
+    type: direct
+    verified: false
+    source: CIS Linux Benchmark — User Accounts and Environment
+    notes: MIJHAR uses a stricter 90-day threshold than the CIS default.
+- id: 5.4.2
+  title: Ensure /etc/shadow permissions are configured
+  level: Level 1
+  domain: Access, Authentication and Authorization
+  verified: true
+  mappings:
+  - rule_id: FILE-001
+    type: direct
+    verified: true
+    source: CIS Linux Benchmark — User Accounts and Environment
+- id: 1.4.2
+  title: Ensure permissions on /etc/sudoers are configured
+  level: Level 1
+  domain: Initial Setup
+  verified: true
+  mappings:
+  - rule_id: FILE-002
+    type: direct
+    verified: true
+    source: CIS Linux Benchmark — Initial Setup
+- id: 5.2.2
+  title: Ensure permissions on SSH private host key files are configured
+  level: Level 1
+  domain: Access, Authentication and Authorization
+  verified: true
+  mappings:
+  - rule_id: FILE-003
+    type: direct
+    verified: true
+    source: CIS Linux Benchmark — SSH Server Configuration
+- id: 3.5.1.1
+  title: Ensure a firewall is active
+  level: Level 1
+  domain: Network Configuration
+  verified: true
+  mappings:
+  - rule_id: FW-001
+    type: direct
+    verified: true
+    source: CIS Linux Benchmark — Network Configuration
+- id: 2.6.1
+  title: Ensure FileVault is enabled (macOS)
+  level: Level 1
+  domain: System Security Settings
+  verified: false
+  mappings:
+  - rule_id: MAC-001
+    type: direct
+    verified: false
+    source: CIS Apple macOS Benchmark
+    notes: Verify section number against the licensed macOS benchmark.
+- id: 2.5.1
+  title: Ensure the Application Firewall is enabled (macOS)
+  level: Level 1
+  domain: System Security Settings
+  verified: false
+  mappings:
+  - rule_id: MAC-002
+    type: direct
+    verified: false
+    source: CIS Apple macOS Benchmark
+- id: 2.6.2
+  title: Ensure Gatekeeper is enabled (macOS)
+  level: Level 1
+  domain: System Security Settings
+  verified: false
+  mappings:
+  - rule_id: MAC-003
+    type: direct
+    verified: false
+    source: CIS Apple macOS Benchmark
+- id: 2.5.2
+  title: Ensure System Integrity Protection is enabled (macOS)
+  level: Level 1
+  domain: System Security Settings
+  verified: false
+  mappings:
+  - rule_id: MAC-004
+    type: direct
+    verified: false
+    source: CIS Apple macOS Benchmark
+- id: '1.1'
+  title: Ensure automatic security updates are enabled (macOS)
+  level: Level 1
+  domain: Installation and Updates
+  verified: false
+  mappings:
+  - rule_id: MAC-005
+    type: direct
+    verified: false
+    source: CIS Apple macOS Benchmark
+- id: 2.3.2
+  title: Ensure a password is required to wake from sleep/screen saver (macOS)
+  level: Level 1
+  domain: System Preferences
+  verified: false
+  mappings:
+  - rule_id: MAC-006
+    type: direct
+    verified: false
+    source: CIS Apple macOS Benchmark

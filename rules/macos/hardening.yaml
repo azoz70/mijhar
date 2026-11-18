@@ -1,0 +1,92 @@
+# MIJHAR macOS hardening rules (MVP sample set).
+# NOTE: string values are quoted because YAML 1.1 would otherwise treat
+# `yes`/`no`/`on`/`off` as booleans.
+- id: MAC-001
+  title: FileVault full-disk encryption is enabled
+  description: FileVault encrypts the startup volume to protect data at rest.
+  severity: high
+  platforms: [macos]
+  technical_impact: Without full-disk encryption, an attacker with physical access can read the disk contents.
+  security_impact: Loss of confidentiality for all data at rest if the device is lost or stolen.
+  remediation: Enable FileVault in System Settings > Privacy & Security > FileVault.
+  references:
+    cis: ["2.6.1"]
+  check:
+    fact: filevault.enabled
+    operator: equals
+    value: true
+
+- id: MAC-002
+  title: Application firewall is enabled
+  description: The macOS application firewall filters inbound connections.
+  severity: high
+  platforms: [macos]
+  technical_impact: An off firewall leaves services exposed to unsolicited inbound connections.
+  security_impact: Increased network attack surface.
+  remediation: Enable the firewall in System Settings > Network > Firewall.
+  references:
+    cis: ["2.5.1"]
+  check:
+    fact: firewall.enabled
+    operator: equals
+    value: true
+
+- id: MAC-003
+  title: Gatekeeper is enabled
+  description: Gatekeeper restricts which applications may run based on code signing and notarization.
+  severity: medium
+  platforms: [macos]
+  technical_impact: Disabling Gatekeeper allows unsigned or malicious applications to run.
+  security_impact: Increased risk of malware execution.
+  remediation: Run 'sudo spctl --master-enable' to re-enable app assessment.
+  references:
+    cis: ["2.6.2"]
+  check:
+    fact: gatekeeper.enabled
+    operator: equals
+    value: true
+
+- id: MAC-004
+  title: System Integrity Protection (SIP) is enabled
+  description: SIP protects critical system files and processes from modification.
+  severity: high
+  platforms: [macos]
+  technical_impact: Disabling SIP allows modification of protected OS components.
+  security_impact: Loss of integrity protection for the operating system.
+  remediation: Boot into Recovery and run 'csrutil enable'.
+  references:
+    cis: ["2.5.1"]
+  check:
+    fact: sip.enabled
+    operator: equals
+    value: true
+
+- id: MAC-005
+  title: Automatic security updates are enabled
+  description: The system should automatically check for and install security updates.
+  severity: medium
+  platforms: [macos]
+  technical_impact: Missing automatic updates leaves known vulnerabilities unpatched.
+  security_impact: Increased exposure to publicly known vulnerabilities.
+  remediation: Enable automatic updates in System Settings > General > Software Update.
+  references:
+    cis: ["1.1"]
+  check:
+    fact: autoupdate.check_enabled
+    operator: equals
+    value: true
+
+- id: MAC-006
+  title: Screen lock requires a password
+  description: The screen saver/lock should require a password to resume the session.
+  severity: medium
+  platforms: [macos]
+  technical_impact: An unattended unlocked session can be used by an unauthorized person.
+  security_impact: Unauthorized access to the active user session.
+  remediation: Enable 'Require password after sleep or screen saver begins' in lock screen settings.
+  references:
+    cis: ["2.3.2"]
+  check:
+    fact: screenlock.require_password
+    operator: equals
+    value: true

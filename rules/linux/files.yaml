@@ -1,0 +1,46 @@
+# MIJHAR Linux file permission rules.
+# Permission bits are expressed as decimal (e.g. 0o640 == 416).
+- id: FILE-001
+  title: /etc/shadow is not readable by unauthorized users
+  description: The shadow password file must be restricted (mode 0640 or stricter).
+  severity: high
+  platforms: [linux]
+  technical_impact: World-readable /etc/shadow exposes password hashes to offline cracking.
+  security_impact: Direct compromise of password hashes.
+  remediation: Run 'chmod 640 /etc/shadow' (or 600) and verify group ownership.
+  references:
+    cis: ["5.4.2"]
+  check:
+    fact: file.shadow_mode
+    operator: less_than_or_equal
+    value: 416   # 0o640
+
+- id: FILE-002
+  title: /etc/sudoers has restrictive permissions
+  description: The sudoers file should be readable only by root (0640/0440 or stricter).
+  severity: high
+  platforms: [linux]
+  technical_impact: Writable sudoers allows an attacker to grant themselves root.
+  security_impact: Full privilege escalation.
+  remediation: Run 'chmod 440 /etc/sudoers' and verify ownership root:root.
+  references:
+    cis: ["1.4.2"]
+  check:
+    fact: file.sudoers_mode
+    operator: in
+    value: [256, 288]   # 0o400, 0o440
+
+- id: FILE-003
+  title: SSH private host keys are protected
+  description: SSH host private keys must not be world readable.
+  severity: high
+  platforms: [linux]
+  technical_impact: Exposed host keys enable man-in-the-middle impersonation of the host.
+  security_impact: Loss of host identity and potential traffic interception.
+  remediation: Run 'chmod 600 /etc/ssh/ssh_host_*_key'.
+  references:
+    cis: ["5.2.2"]
+  check:
+    fact: file.ssh_host_rsa_key_mode
+    operator: less_than_or_equal
+    value: 384   # 0o600

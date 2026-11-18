@@ -1,0 +1,2033 @@
+# SAMA Cyber Security Framework (CSF)
+# Source: Saudi Central Bank (SAMA) Rulebook — Cyber Risk Control chapter.
+# Circular No. 381000091275 (24/5/2017), Status: In-Force.
+# 4 domains, 32 subdomains, 6 maturity levels (0-5, min Level 3).
+# Control considerations extracted from the Rulebook; hierarchical IDs are
+# best-effort reconstructions and require verification against the official source.
+id: sama-csf
+name: SAMA Cyber Security Framework
+version: CSF (SAMA Rulebook, Circular 381000091275)
+description: Mandatory, principle-based cybersecurity framework issued by the Saudi Central Bank for regulated Member Organizations. 4 main domains, 32 subdomains, 6 maturity levels (0-5, min Level 3).
+  Each subdomain states principles/objectives and numbered control considerations (up to 4 levels).
+mapping_note: Subdomain names/numbers are from the SAMA Rulebook. Control-consideration text is extracted verbatim from the Rulebook; hierarchical IDs are reconstructed from the document's numbering and
+  require verification against the official source. Rule-to-consideration links are interpretive and unverified.
+domains:
+- id: '3.1'
+  name: Cyber Security Leadership and Governance
+  controls:
+  - id: 3.1.1
+    title: Cyber Security Governance
+    domain: Cyber Security Leadership and Governance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.1.2
+    title: Cyber Security Strategy
+    domain: Cyber Security Leadership and Governance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.1.3
+    title: Cyber Security Policy
+    domain: Cyber Security Leadership and Governance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.1.4
+    title: Cyber Security Roles and Responsibilities
+    domain: Cyber Security Leadership and Governance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.1.5
+    title: Cyber Security in Project Management
+    domain: Cyber Security Leadership and Governance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.1.6
+    title: Cyber Security Awareness
+    domain: Cyber Security Leadership and Governance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.1.7
+    title: Cyber Security Training
+    domain: Cyber Security Leadership and Governance
+    verified: true
+    technical: false
+    excluded_reason: ''
+- id: '3.2'
+  name: Cyber Security Risk Management and Compliance
+  controls:
+  - id: 3.2.1
+    title: Cyber Security Risk Management
+    domain: Cyber Security Risk Management and Compliance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.2.2
+    title: Regulatory Compliance
+    domain: Cyber Security Risk Management and Compliance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.2.3
+    title: Compliance with (Inter)national Industry Standards
+    domain: Cyber Security Risk Management and Compliance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.2.4
+    title: Cyber Security Review
+    domain: Cyber Security Risk Management and Compliance
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.2.5
+    title: Cyber Security Audits
+    domain: Cyber Security Risk Management and Compliance
+    verified: true
+    technical: false
+    excluded_reason: ''
+- id: '3.3'
+  name: Cyber Security Operations and Technology
+  controls:
+  - id: 3.3.1
+    title: Human Resources
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: false
+    excluded_reason: Human resources management — outside technical configuration assessment scope.
+  - id: 3.3.2
+    title: Physical Security
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: false
+    excluded_reason: Physical security — not assessable via technical configuration review.
+  - id: 3.3.3
+    title: Asset Management
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.3.1
+    title: The asset management process should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.3.2
+    title: The effectiveness of the asset management process should be monitored, measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.3.3
+    title: 'The asset management process should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.3.3.a
+    title: a unified register;
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.3.3.b
+    title: ownership and custodianship of information assets;
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.3.3.c
+    title: the reference to relevant other processes, depending on asset management;
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.3.3.d
+    title: information asset classification, labeling and handling;
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.3.3.e
+    title: the discovery of new information assets.
+    domain: Cyber Security Operations and Technology
+    subdomain: Asset Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4
+    title: Cyber Security Architecture
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.4.1
+    title: The cyber security architecture should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4.2
+    title: The compliance with the cyber security architecture should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4.3
+    title: 'The cyber security architecture should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4.3.a
+    title: a strategic outline of cyber security capabilities and controls based on the business requirements;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4.3.b
+    title: approval of the defined cyber security architecture;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4.3.c
+    title: the requirement of having qualified cyber security architects;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4.3.c.d
+    title: design principles for developing cyber security controls and applying cyber security requirements (i.e., the
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.4.3.e
+    title: periodic review of the cyber security architecture.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Architecture
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5
+    title: Identity and Access Management
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.5.1
+    title: The identity and access management policy, including the responsibilities and accountabilities, should be
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.2
+    title: The compliance with the identity and access policy should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.3
+    title: The effectiveness of the cyber security controls within the identity and access management policy should be
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4
+    title: 'The identity and access management policy should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: SSH-003
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.5.4
+      notes: Interpretive rule-to-consideration link (pending review).
+    - rule_id: MAC-006
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.5.4
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.5.4.a
+    title: business requirements for access control (i.e., need-to-have and need-to-know);
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b
+    title: 'user access management (e.g., joiners, movers, leavers):'
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b.1
+    title: all identified user types should be covered (i.e., internal staff, third parties);
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b.2
+    title: changes of job status or job positions for internal staff (e.g. joiner, mover and leaver) should be
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b.3
+    title: changes for external staff or third parties should be instigated by the appointed accountable party;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b.4
+    title: user access requests are formally approved in accordance with business and compliance requirements
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b.5
+    title: changes in access rights should be processed in a timely manner;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b.6
+    title: periodically user access rights and profiles should be reviewed;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.b.7
+    title: an audit trail of submitted, approved and processed user access requests and revocation requests
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.c
+    title: user access management should be supported by automation;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.d
+    title: centralization of the identity and access management function;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.e
+    title: multi-factor authentication for sensitive and critical systems and profiles;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: SSH-002
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.5.4.e
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.5.4.f
+    title: 'privileged and remote access management, which should address:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: SSH-001
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.5.4.f
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.5.4.f.1
+    title: 'the allocation and restricted use of privileged and remote access, specifying:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: FILE-002
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.5.4.f.1
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.5.4.f.1.a
+    title: multi-factor authentication should be used for all remote access;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.f.1.b
+    title: multi-factor authentication should be used for privilege access on critical systems based on a
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.f.2
+    title: the periodic review of users with privileged and remote accounts;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.f.3
+    title: individual accountability;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.f.4
+    title: 'the use of non-personal privileged accounts, including:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.f.4.a
+    title: limitation and monitoring;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.5.4.f.4.b
+    title: confidentiality of passwords;
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: FILE-001
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.5.4.f.4.b
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.5.4.f.4.c
+    title: changing passwords frequently and at the end of each session.
+    domain: Cyber Security Operations and Technology
+    subdomain: Identity and Access Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: PASS-001
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.5.4.f.4.c
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.6
+    title: Application Security
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.6.1
+    title: The application cyber security standards should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.2
+    title: The compliance with the application security standards should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.3
+    title: The effectiveness of the application cyber security controls should be measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.4
+    title: Application development should follow the approved secure system development life cycle methodology (SDLC).
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5
+    title: 'The application security standard should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5.a
+    title: secure coding standards;
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5.a.b
+    title: the cyber security controls implemented (e.g., configuration parameters, events to monitor and retain
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5.c
+    title: the segregation of duties within the application (supported with a documented authorization matrix);
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5.c.d
+    title: the protection of data aligned with the (agreed) classification scheme (including privacy of customer data
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5.e
+    title: vulnerability and patch management;
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5.f
+    title: back-up and recovery procedures;
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.6.5.g
+    title: periodic cyber security compliance review.
+    domain: Cyber Security Operations and Technology
+    subdomain: Application Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7
+    title: Change Management
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.7.1
+    title: The change management process should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.2
+    title: The compliance with the change management process should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.3
+    title: The effectiveness of the cyber security controls within the change management process should be measured and
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4
+    title: 'The change management process should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.a
+    title: cyber security requirements for controlling changes to information assets, such as assessing the impact of
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.b
+    title: 'security testing, which should (if applicable) include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.b.1
+    title: penetration testing;
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.b.2
+    title: code review if applications are developed internally;
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.b.3
+    title: code review of externally developed applications and if the source code is available
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.b.4
+    title: a code review report (or equivalent, such as an independent assurance statement) in case the source
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.c
+    title: approval of changes by the business owner;
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.d
+    title: approval from the cyber security function before submitting to Change Advisory Board (CAB);
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.e
+    title: approval by CAB;
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.f
+    title: post-implementation review of the related cyber security controls;
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.f.g
+    title: development, testing and implementation are segregated for both the (technical) environment and involved
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.h
+    title: the procedure for emergency changes and fixes;
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.7.4.i
+    title: fall-back and roll-back procedures.
+    domain: Cyber Security Operations and Technology
+    subdomain: Change Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8
+    title: Infrastructure Security
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.8.1
+    title: The infrastructure security standards should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.2
+    title: The compliance with the infrastructure security standards should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.3
+    title: The effectiveness of the infrastructure cyber security controls should be measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.4
+    title: The infrastructure security standards should cover all instances of infrastructure available in the main
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.5
+    title: The infrastructure security standards should cover all instances of infrastructure (e.g., operating systems,
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6
+    title: 'The infrastructure security standard should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.a
+    title: the cyber security controls implemented (e.g., configuration parameters, events to monitor and retain
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: MAC-004
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.8.6.a
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.8.6.a.b
+    title: the segregation of duties within the infrastructure component (supported with a documented authorization
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.a.c
+    title: the protection of data aligned with the (agreed) classification scheme (including privacy of customer data
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.d
+    title: the use of approved software and secure protocols;
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.e
+    title: segmentation of networks;
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: FW-001
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.8.6.e
+      notes: Interpretive rule-to-consideration link (pending review).
+    - rule_id: MAC-002
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.8.6.e
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.8.6.f
+    title: malicious code/software and virus protection (and applying application whitelisting and APT protection);
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: MAC-003
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.8.6.f
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.8.6.g
+    title: vulnerability and patch management;
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.h
+    title: 'DDOS protection (where applicable); this should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.h.1
+    title: the use of scrubbing services;
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.h.2
+    title: specification of the bandwidth agreed;
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.h.3
+    title: 24x7 monitoring by Security Operating Center (SOC), Service Provider (SP) and scrubbing provider;
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.h.4
+    title: testing of DDOS scrubbing (minimum twice a year);
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.h.5
+    title: DDOS services should be implemented for the main datacenter(s) as well as the disaster recovery
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.i
+    title: back-up and recovery procedures;
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.8.6.j
+    title: periodic cyber security compliance review.
+    domain: Cyber Security Operations and Technology
+    subdomain: Infrastructure Security
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.9
+    title: Cryptography
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.9.1
+    title: A cryptographic security standard should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cryptography
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.9.2
+    title: The compliance with the cryptographic security standard should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cryptography
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.9.3
+    title: The effectiveness of the cryptographic security controls should be measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cryptography
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.9.4
+    title: 'The cryptographic security standard should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Cryptography
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.9.4.a
+    title: an overview of the approved cryptographic solutions and relevant restrictions (e.g., technically,legally);
+    domain: Cyber Security Operations and Technology
+    subdomain: Cryptography
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.9.4.b
+    title: the circumstances when the approved cryptographic solutions should be applied;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cryptography
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: MAC-001
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.9.4.b
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.9.4.c
+    title: the management of encryption keys, including lifecycle management, archiving and recovery.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cryptography
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: FILE-003
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.9.4.c
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.10
+    title: Bring Your Own Device (BYOD)
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.10.1
+    title: The BYOD cyber security standard should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.2
+    title: The compliance with the BYOD cyber security standard should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.3
+    title: The effectiveness of the BYOD cyber security controls should be measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.4
+    title: 'The BYOD standard should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.4.a
+    title: responsibilities of the user (including awareness training);
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.4.a.b
+    title: information regarding the restrictions and consequences for staff when the Member Organization
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.4.c
+    title: the isolation of business information from personal information (e.g., containerization);
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.4.d
+    title: the regulation of corporate mobile applications or approved “public” mobile applications;
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.10.4.d.e
+    title: the use of mobile device management (MDM); applying access controls to the device and business container
+    domain: Cyber Security Operations and Technology
+    subdomain: Bring Your Own Device (BYOD)
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.11
+    title: Secure Disposal of Information Assets
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.11.1
+    title: The secure disposal standard and procedure should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Secure Disposal of Information Assets
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.11.2
+    title: The compliance with the secure disposal standard and procedure should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Secure Disposal of Information Assets
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.11.3
+    title: The effectiveness of the secure disposal cyber security controls should be measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Secure Disposal of Information Assets
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.11.4
+    title: Information assets should be disposed in accordance with legal and regulatory requirements, when no longer
+    domain: Cyber Security Operations and Technology
+    subdomain: Secure Disposal of Information Assets
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.11.5
+    title: Sensitive information should be destroyed using techniques to make the information non-retrievable (e.g., secure
+    domain: Cyber Security Operations and Technology
+    subdomain: Secure Disposal of Information Assets
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.11.6
+    title: The Member Organization should ensure that third party service providers used for secure disposal, transport
+    domain: Cyber Security Operations and Technology
+    subdomain: Secure Disposal of Information Assets
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.12
+    title: Payment Systems
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.13
+    title: Electronic Banking Services
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.13.1
+    title: The cyber security standards for electronic banking services should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.2
+    title: The compliance with cyber security standards for electronic banking services should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.3
+    title: The effectiveness of the cyber security standard for electronic banking services should be measured and
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.4
+    title: 'Electronic banking services security standard should cover:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.4.a
+    title: use of brand protection measures to protect online services including social media.
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.4.b
+    title: 'online, mobile and phone banking:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.4.b.1
+    title: use of official application stores and websites (applicable for online and mobile banking);
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.4.b.2
+    title: use of detection measures and take-down of malicious apps and websites (applicable for online and
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.4.b.3
+    title: use of sandboxing (applicable for online and mobile banking);
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.4.b.4
+    title: use of non-caching techniques (applicable for online and mobile banking);
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5
+    title: use of communication techniques to avoid ‘man-in-the-middle'-attacks (applicable for online and
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6
+    title: 'use of multi-factor authentication mechanisms:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.a
+    title: multi-factor authentication should be used during the registration process for the customer in
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.b
+    title: multi-factor authentication should be implemented for all electronic banking services available to
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.c
+    title: the use of hard and soft tokens should be password protected;
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.d
+    title: revoking the access of customers after 3 successive incorrect passwords or invalid PINs;
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.e
+    title: the process for changing the customer mobile number should only be done from either a branch or
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.f
+    title: the processes for requesting and activating of the multi-factor authentication should be done
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.g
+    title: 'multi-factor authentication should be implemented for the following processes:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.1
+    title: sign-on;
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.2
+    title: adding or modifying beneficiaries;
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.3
+    title: adding utility and government payment services;
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.4
+    title: high-risk transactions (when it exceeds predefined limits);
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.6.5
+    title: password reset;
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.7
+    title: the processes for adding and activating beneficiaries should be done through different delivery
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.8
+    title: high availability of the electronic banking services should be ensured;
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.9
+    title: scheduled downtime of the electronic banking services should be timely communicated to SAMA and
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.10
+    title: contractual agreements between the Member Organization and the customer addressing the roles,
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.11
+    title: obtaining approval of SAMA before launching a new electronic banking service.
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.c
+    title: 'ATMs and POSs:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.c.1
+    title: prevention and detection of exploiting the ATM/POS application and infrastructure vulnerabilities (e.g.,
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.c.2
+    title: cyber security measures, such as hardening of operating systems, malware protection, privacy screens,
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.c.3
+    title: remote stopping of ATMs in case of malicious activities.
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.d
+    title: 'SMS instant notification services:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.d.1
+    title: SMS messages should not contain sensitive data (e.g., account balance - except for credit cards);
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.d.2
+    title: SMS alert should be sent to both mobile numbers (old and new) when the customer’s mobile number
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.d.3
+    title: SMS notification should be sent to the customer’s mobile number when requesting a new multi-factor
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.d.4
+    title: SMS notification should be sent to the customer’s mobile number for all retail and personal financial
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.13.5.d.5
+    title: SMS notification should be sent to the customer’s mobile number when beneficiaries are added,
+    domain: Cyber Security Operations and Technology
+    subdomain: Electronic Banking Services
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14
+    title: Cyber Security Event Management
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.14.1
+    title: The security event management process should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.2
+    title: The effectiveness of the cyber security controls within the security event management process should be
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.3
+    title: To support this process a security event monitoring standard should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.3.a
+    title: the standard should address for all information assets the mandatory events which should be monitored,
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4
+    title: 'The security event management process should include requirements for:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.a
+    title: the establishment of a designated team responsible for security monitoring (i.e., Security Operations Center
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.b
+    title: skilled and (continuously) trained staff;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.c
+    title: a restricted area to facilitate SOC activities and workspaces;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.d
+    title: resources required continuous security event monitoring activities (24x7);
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.e
+    title: detection and handling of malicious code and software;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.f
+    title: detection and handling of security or suspicious events and anomalies;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.g
+    title: deployment of security network packet analysis solution;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.h
+    title: adequately protected logs;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.i
+    title: periodic compliance monitoring of applications and infrastructure cyber security standards
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.i.j
+    title: automated and centralized analysis of security loggings and correlation of event or patterns (i.e., Security
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.k
+    title: reporting of cyber security incidents;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.14.4.l
+    title: independent periodic testing of the effectiveness of the security operations center (e.g., red- teaming).
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Event Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15
+    title: Cyber Security Incident Management
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.15.1
+    title: The cyber security incident management process should be defined, approved, implemented and aligned with the
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.2
+    title: The effectiveness of the cyber security controls within the cyber security incident management process should be
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.3
+    title: The standard should address the mandatory and suspicious security events which should be responded to.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4
+    title: 'The security incident management process should include requirements for:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.a
+    title: the establishment of a designated team responsible for security incident management;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.b
+    title: skilled and (continuously) trained staff;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.b.c
+    title: sufficient capacity available of certified forensic staff for handling major incidents (e.g., internal staff or
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.d
+    title: a restricted area to facilitate the computer emergency response team (CERT) workspaces;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.e
+    title: the classification of cyber security incidents;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.f
+    title: the timely handling of cyber security incidents, recording and monitoring progress;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.g
+    title: the protection of relevant evidence and loggings;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.h
+    title: post-incident activities, such as forensics, root-cause analysis of the incidents;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.i
+    title: reporting of suggested improvements to the CISO and the Committee;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.4.j
+    title: establish a cyber security incident repository.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.5
+    title: The Member Organization should inform ‘SAMA IT Risk Supervision' immediately when a medium or high classified
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.6
+    title: The Member Organization should obtain ‘no objection' from ‘SAMA IT Risk Supervision' before any media
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7
+    title: The Member Organization should submit a formal incident report ‘SAMA IT Risk Supervision' after resuming
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.a
+    title: title of incident;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.b
+    title: classification of the incident (medium or high);
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.c
+    title: date and time of incident occurred;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.d
+    title: date and time of incident detected;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.e
+    title: information assets involved;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.f
+    title: (technical) details of the incident;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.g
+    title: root-cause analysis;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.h
+    title: corrective activities performed and planned;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.h.i
+    title: description of impact (e.g., loss of data, disruption of services, unauthorized modification of data,
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.j
+    title: total estimated cost of incident;
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.15.7.k
+    title: estimated cost of corrective actions.
+    domain: Cyber Security Operations and Technology
+    subdomain: Cyber Security Incident Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16
+    title: Threat Management
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.16.1
+    title: The threat intelligence management process should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.2
+    title: The effectiveness of the threat intelligence management process should be measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.3
+    title: 'The threat intelligence management process should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.3.a
+    title: the use of internal sources, such as access control, application and infrastructure logs, IDS, IPS, security
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.3.a.b
+    title: the use of reliable and relevant external sources, such as SAMA, government agencies, security forums,
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.3.c
+    title: a defined methodology to analyze the threat information periodically;
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.3.c.d
+    title: the relevant details on identified or collected threats, such as modus operandi, actors, motivation and type
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.3.e
+    title: the relevance of the derived intelligence and the action-ability for follow-up (for e.g., SOC, Risk Management);
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.16.3.f
+    title: sharing the relevant intelligence with the relevant stakeholders (e.g., SAMA, BCIS members).
+    domain: Cyber Security Operations and Technology
+    subdomain: Threat Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17
+    title: Vulnerability Management
+    domain: Cyber Security Operations and Technology
+    verified: true
+    technical: true
+  - id: 3.3.17.1
+    title: The vulnerability management process should be defined, approved and implemented.
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.2
+    title: The effectiveness of the vulnerability management process should be measured and periodically evaluated.
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3
+    title: 'The vulnerability management process should include:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3.a
+    title: all information assets;
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3.b
+    title: frequency of performing the vulnerability scan (risk-based);
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3.c
+    title: classification of vulnerabilities;
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3.d
+    title: defined timelines to mitigate (per classification);
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3.e
+    title: prioritization for classified information assets;
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3.f
+    title: patch management and method of deployment.
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings:
+    - rule_id: MAC-005
+      type: partial
+      verified: false
+      source: SAMA CSF 3.3.17.3.f
+      notes: Interpretive rule-to-consideration link (pending review).
+  - id: 3.3.17.1
+    title: The cyber security requirements should be defined, approved, implemented and communicated within the contract
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.2
+    title: The compliance with contract and vendor management process should be monitored.
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.3
+    title: The effectiveness of the cyber security controls within the contract and vendor management process should be
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+  - id: 3.3.17.4
+    title: 'These contract and vendor management processes should cover:'
+    domain: Cyber Security Operations and Technology
+    subdomain: Vulnerability Management
+    level: consideration
+    verified: true
+    technical: true
+    mappings: []
+- id: '3.4'
+  name: Third Party Cyber Security
+  controls:
+  - id: 3.4.1
+    title: Contract and Vendor Management
+    domain: Third Party Cyber Security
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.4.2
+    title: Outsourcing
+    domain: Third Party Cyber Security
+    verified: true
+    technical: false
+    excluded_reason: ''
+  - id: 3.4.3
+    title: Cloud Computing
+    domain: Third Party Cyber Security
+    verified: true
+    technical: false
+    excluded_reason: ''
