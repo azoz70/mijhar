@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import socket
 import uuid
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -22,7 +22,7 @@ from mijhar.compliance.registry import Framework, FrameworkRegistry
 from mijhar.core.config import Config, Platform, Status, get_config
 from mijhar.core.models import Finding
 from mijhar.database.models import Database, _loads
-from mijhar.evidence.storage import EvidenceRecord, EvidenceStore
+from mijhar.evidence.storage import EvidenceRecord, EvidenceStore, redact_finding_evidence, redact_value
 from mijhar.risk.scoring import RiskAssessment, RiskScorer
 from mijhar.rules.evaluator import RuleEvaluator
 from mijhar.rules.loader import Rule, RuleLoader
@@ -41,9 +41,9 @@ def _severity_distribution(findings: List[Finding]) -> Dict[str, int]:
     return dist
 
 
-def _remediation_summary(db) -> Dict[str, int]:
+def _remediation_summary(db: Database, scan_id: str) -> Dict[str, int]:
     summary = {"open": 0, "in_progress": 0, "pending_validation": 0, "resolved": 0, "accepted_risk": 0}
-    for item in db.list_remediations():
+    for item in db.list_remediations(scan_id=scan_id):
         status = item["status"]
         if status in summary:
             summary[status] += 1
@@ -192,6 +192,14 @@ class Scanner:
 
         evidence_store = EvidenceStore()
         evidence = [evidence_store.add_for_finding(f, asset_id) for f in findings]
+        findings = [
+            replace(
+                finding,
+                observed_value=redact_value(finding.observed_value, key=finding.fact_key),
+                evidence=redact_finding_evidence(finding.evidence, finding.fact_key),
+            )
+            for finding in findings
+        ]
 
         compliance = self.assess_compliance(
             findings, platform=platform, included_rule_ids=included_rule_ids,
@@ -344,7 +352,7 @@ class Scanner:
             finding_dicts = db.findings_for_scan(scan_id)
             exclusions = db.exclusions_for_scan(scan_id)
             finding_reviews = {r["finding_id"] for r in db.list_finding_reviews()}
-            remediation_counts = _remediation_summary(db)
+            remediation_counts = _remediation_summary(db, scan_id)
         findings = [Finding.from_dict(f) for f in finding_dicts]
         platform = Platform(scan["platform"]) if scan["platform"] else Platform.UNKNOWN
         included_rule_ids = {f.rule_id for f in findings}

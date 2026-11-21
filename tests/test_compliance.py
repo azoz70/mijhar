@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from mijhar.compliance.assessment import ControlAssessor, ControlStatus
 from mijhar.compliance.mapper import ComplianceMapper
 from mijhar.compliance.registry import (
@@ -17,7 +19,7 @@ from mijhar.compliance.registry import (
 from mijhar.core.config import Status
 from tests.conftest import make_finding
 
-FRAMEWORKS_DIR = Path(__file__).resolve().parents[1] / "frameworks"
+FRAMEWORKS_DIR = Path(__file__).resolve().parents[1] / "src" / "mijhar" / "compliance" / "data"
 
 
 def _registry() -> FrameworkRegistry:
@@ -129,6 +131,19 @@ def test_assess_compliant():
     assessment = assessor.assess_control(framework.controls[0], [make_finding(rule_id="R-1", status=Status.PASS)])
     assert assessment.status is ControlStatus.COMPLIANT
     assert assessment.needs_review is False
+
+
+@pytest.mark.parametrize("status", [Status.ERROR, Status.NOT_APPLICABLE, Status.NOT_SUPPORTED, None])
+def test_assess_pass_with_incomplete_results_requires_review(status):
+    control = _control("C-1", ["R-1", "R-2"])
+    findings = [make_finding(rule_id="R-1", status=Status.PASS)]
+    if status is not None:
+        findings.append(make_finding(rule_id="R-2", status=status))
+
+    assessment = ControlAssessor().assess_control(control, findings, included_rule_ids={"R-1", "R-2"})
+
+    assert assessment.status is ControlStatus.PARTIALLY_COMPLIANT
+    assert assessment.needs_review
 
 
 def test_assess_non_compliant_requires_review():

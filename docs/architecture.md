@@ -106,8 +106,8 @@ Score bands map back to a risk level (critical/high/medium/low/informational).
 
 - **New collectors:** subclass `BaseCollector` and register it in
   `Engine.register_collector`.
-- **New rules:** add a YAML file under `rules/<platform>/` with applicability
+- **New rules:** add a YAML file under `src/mijhar/rules/data/<platform>/` with applicability
   metadata (platforms, `required_components`, `prerequisites`,
   `technical_assessability`, `framework_mappings`).
-- **New frameworks:** add a YAML file under `frameworks/<id>/` following the
+- **New frameworks:** add a YAML file under `src/mijhar/compliance/data/<id>/` following the
   schema in `compliance/registry.py`.

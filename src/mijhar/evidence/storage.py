@@ -21,6 +21,10 @@ _SENSITIVE_ASSIGNMENT = re.compile(
     r"(?i)\b(password|passwd|pwd|secret|token|api[_-]?key|access[_-]?key|"
     r"private[_-]?key|credential|authorization)\b\s*[=:]\s*\S+"
 )
+_SENSITIVE_KEY = re.compile(
+    r"(?:password|passwd|pwd|secret|token|api[_-]?key|access[_-]?key|"
+    r"private[_-]?key|credential|authorization)", re.IGNORECASE,
+)
 _AUTH_BEARER = re.compile(r"(?i)\b(authorization)\s*[=:]\s*(?:bearer|basic)\s+\S+")
 _AWS_KEY = re.compile(r"\bAKIA[0-9A-Z]{16}\b")
 _LONG_TOKEN = re.compile(r"\b[A-Za-z0-9+/]{40,}={0,2}\b")
@@ -40,6 +44,32 @@ def redact(content: str) -> str:
     text = _AWS_KEY.sub("[REDACTED-AWS-KEY]", text)
     text = _LONG_TOKEN.sub("[REDACTED-TOKEN]", text)
     return text
+
+
+def redact_value(value: Any, *, key: Optional[str] = None) -> Any:
+    """Redact matching field values and secret patterns while keeping structure."""
+    if value is not None and key and _SENSITIVE_KEY.fullmatch(key.rsplit(".", 1)[-1]):
+        return "[REDACTED]"
+    if isinstance(value, dict):
+        return {
+            redact(field) if isinstance(field, str) else field:
+            redact_value(item, key=field if isinstance(field, str) else None)
+            for field, item in value.items()
+        }
+    if isinstance(value, list):
+        return [redact_value(item) for item in value]
+    if isinstance(value, tuple):
+        return tuple(redact_value(item) for item in value)
+    return redact(value) if isinstance(value, str) else value
+
+
+def redact_finding_evidence(evidence: Any, fact_key: Optional[str]) -> Any:
+    if not isinstance(evidence, dict):
+        return redact_value(evidence, key=fact_key)
+    return {
+        key: redact_value(value, key=fact_key if key in ("value", "raw") else key)
+        for key, value in evidence.items()
+    }
 
 
 def to_evidence_text(value: Any) -> str:
@@ -94,7 +124,7 @@ class EvidenceStore:
         collected_at: Optional[str] = None,
     ) -> EvidenceRecord:
         text = to_evidence_text(content)
-        stored = redact(text) if redact_content else text
+        stored = to_evidence_text(redact_value(content, key=key)) if redact_content else text
         record = EvidenceRecord(
             id=f"E-{uuid.uuid4().hex[:10]}",
             finding_id=finding_id,
@@ -109,12 +139,16 @@ class EvidenceStore:
         return record
 
     def add_for_finding(self, finding: Finding, asset_id: str) -> EvidenceRecord:
-        return self.add(
+        sanitized = redact_finding_evidence(finding.evidence, finding.fact_key)
+        record = self.add(
             finding_id=finding.id,
             asset_id=asset_id,
             key=finding.fact_key,
-            content=finding.evidence,
+            content=sanitized,
+            redact_content=False,
         )
+        record.redacted = sanitized != finding.evidence
+        return record
 
     def get(self, record_id: str) -> Optional[EvidenceRecord]:
         return self._records.get(record_id)

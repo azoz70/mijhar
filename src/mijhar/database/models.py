@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Optional
 
 from mijhar.compliance.registry import Framework
 from mijhar.core.models import Finding
-from mijhar.evidence.storage import EvidenceRecord, compute_hash
+from mijhar.evidence.storage import EvidenceRecord, compute_hash, redact_finding_evidence, redact_value
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS assets (
@@ -353,8 +353,8 @@ class Database:
                 finding.severity.value,
                 finding.status.value,
                 finding.fact_key,
-                _dumps(finding.observed_value),
-                _dumps(finding.evidence),
+                _dumps(redact_value(finding.observed_value, key=finding.fact_key)),
+                _dumps(redact_finding_evidence(finding.evidence, finding.fact_key)),
                 finding.technical_impact,
                 finding.security_impact,
                 finding.remediation,
@@ -379,8 +379,8 @@ class Database:
     @staticmethod
     def _finding_from_row(row: sqlite3.Row) -> Dict[str, Any]:
         data = dict(row)
-        data["observed_value"] = _loads(data.get("observed_value"))
-        data["evidence"] = _loads(data.get("evidence"))
+        data["observed_value"] = redact_value(_loads(data.get("observed_value")), key=data["fact_key"])
+        data["evidence"] = redact_finding_evidence(_loads(data.get("evidence")), data["fact_key"])
         data["framework_refs"] = _loads(data.get("framework_refs"))
         return data
 
@@ -455,11 +455,17 @@ class Database:
         )
         self._conn.commit()
 
-    def list_remediations(self, open_only: bool = False) -> List[Dict[str, Any]]:
+    def list_remediations(self, open_only: bool = False, *, scan_id: Optional[str] = None) -> List[Dict[str, Any]]:
         query = "SELECT * FROM remediations"
-        params: tuple = ()
+        conditions = []
+        params = []
+        if scan_id is not None:
+            conditions.append("finding_id IN (SELECT id FROM findings WHERE scan_id=?)")
+            params.append(scan_id)
         if open_only:
-            query += " WHERE status NOT IN ('resolved', 'closed')"
+            conditions.append("status NOT IN ('resolved', 'closed')")
+        if conditions:
+            query += " WHERE " + " AND ".join(conditions)
         query += " ORDER BY created_at DESC"
         return [dict(r) for r in self._conn.execute(query, params)]
 

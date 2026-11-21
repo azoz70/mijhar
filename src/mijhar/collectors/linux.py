@@ -37,24 +37,6 @@ def parse_key_value_file(content: str) -> Dict[str, str]:
     return result
 
 
-def parse_sshd_config(content: str) -> Dict[str, str]:
-    """Parse ``sshd_config`` directives (``key value`` or ``key=value``).
-
-    Simplified: comments and blank lines are skipped and duplicate directives
-    resolve to the *last* occurrence. ``Match`` blocks are not interpreted.
-    """
-    result: Dict[str, str] = {}
-    for raw in content.splitlines():
-        line = raw.strip()
-        if not line or line.startswith("#"):
-            continue
-        key, sep, value = line.partition("=") if "=" in line else line.partition(" ")
-        if not value.strip():
-            continue
-        result[key.strip().lower()] = value.split("#", 1)[0].strip().lower()
-    return result
-
-
 def parse_login_defs(content: str) -> Dict[str, str]:
     """Parse ``/etc/login.defs`` ``KEY VALUE`` entries."""
     result: Dict[str, str] = {}
@@ -138,26 +120,40 @@ class LinuxCollector(BaseCollector):
         return self._file_fact("os.release", result, parse=parse_key_value_file)
 
     def _ssh_settings(self) -> List[Fact]:
-        result = self.files.read_text(_SSHD)
+        # OpenSSH resolves defaults, duplicate directives and included files.
+        # Without -C it reports the global policy. Match policies need a
+        # connection context and are outside the scope of this collection.
+        source = "cmd:/usr/sbin/sshd -T (global policy)"
+        result = self.runner.run(["/usr/sbin/sshd", "-T"])
+        directives = {
+            "permitrootlogin": "ssh.permit_root_login",
+            "passwordauthentication": "ssh.password_authentication",
+            "permitemptypasswords": "ssh.permit_empty_passwords",
+            "x11forwarding": "ssh.x11_forwarding",
+        }
         if not result.ok:
-            return [self._file_fact("ssh.config", result, value={})]
-        cfg = parse_sshd_config(result.content or "")
-        facts = [self._file_fact("ssh.config", result, value=cfg)]
-        for directive, key in (
-            ("permitrootlogin", "ssh.permit_root_login"),
-            ("passwordauthentication", "ssh.password_authentication"),
-            ("permitemptypasswords", "ssh.permit_empty_passwords"),
-            ("x11forwarding", "ssh.x11_forwarding"),
-        ):
-            if directive in cfg:
-                facts.append(
-                    Fact(
-                        key=key,
-                        value=cfg[directive],
-                        source=f"file:{_SSHD}",
-                        raw=f"{directive} {cfg[directive]}",
-                    )
-                )
+            config_present = self.files.stat_mode(_SSHD).ok
+            error = result.error or f"exit {result.returncode}"
+            return [
+                Fact(key="ssh.config", value=True if config_present else None,
+                     source=f"file:{_SSHD}", error=None if config_present else error),
+                *(Fact(key=key, source=source, error=error) for key in directives.values()),
+            ]
+
+        settings = {}
+        for line in result.output.splitlines():
+            parts = line.split(None, 1)
+            if len(parts) == 2 and parts[0] in directives:
+                settings[parts[0]] = parts[1].lower()
+
+        facts = [Fact(key="ssh.config", value=True, source=source)]
+        for directive, key in directives.items():
+            value = settings.get(directive)
+            facts.append(Fact(
+                key=key, value=value, source=source,
+                raw=f"{directive} {value}" if value is not None else None,
+                error=None if value is not None else "setting missing from sshd -T output",
+            ))
         return facts
 
     def _password_policy(self) -> List[Fact]:

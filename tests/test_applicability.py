@@ -19,8 +19,8 @@ from mijhar.rules.loader import RuleLoader, rule_from_dict
 from tests.conftest import FakeRunner, result
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-RULES_DIR = REPO_ROOT / "rules"
-FRAMEWORKS_DIR = REPO_ROOT / "frameworks"
+RULES_DIR = REPO_ROOT / "src" / "mijhar" / "rules" / "data"
+FRAMEWORKS_DIR = REPO_ROOT / "src" / "mijhar" / "compliance" / "data"
 
 
 def _all_rules():

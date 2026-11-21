@@ -25,7 +25,7 @@ def test_ssh_collector_delegates_over_transport():
     runner = FakeRunner(
         {
             ("cat", "/etc/os-release"): result(0, 'ID=ubuntu\nVERSION_ID="22.04"\n'),
-            ("cat", "/etc/ssh/sshd_config"): result(0, "PermitRootLogin no\nPasswordAuthentication no\n"),
+            ("/usr/sbin/sshd", "-T"): result(0, "permitrootlogin no\npasswordauthentication no\n"),
             ("cat", "/etc/login.defs"): result(0, "PASS_MAX_DAYS 90\n"),
             ("cat", "/etc/passwd"): result(0, "root:x:0:0:root:/root:/bin/bash\n"),
             ("ufw", "status"): result(0, "Status: active"),
