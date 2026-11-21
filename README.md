@@ -80,6 +80,10 @@ CLI directly:
 .venv/bin/mijhar report --format html --output report.html
 ```
 
+Linux SSH checks use the global policy reported by `/usr/sbin/sshd -T`.
+Per-connection `Match` policies require separate assessment. If the probe fails
+on a host with an SSH configuration, MIJHAR reports an error for the checks.
+
 ### Runtime data location
 
 By default, MIJHAR stores its SQLite database and reports under the
@@ -162,8 +166,8 @@ src/mijhar/
   evidence/       storage (redaction + integrity)
   database/       SQLite models
   reports/        terminal, JSON, CSV, HTML
-rules/            bundled YAML security rules (linux/, macos/, common/)
-frameworks/       cis/, nca_ecc/, sama_csf/, iso27001/
+src/mijhar/rules/data/       bundled YAML security rules (linux/, macos/, common/)
+src/mijhar/compliance/data/ cis/, nca_ecc/, sama_csf/, iso27001/
 tests/            pytest suite
 docs/             documentation
 ```

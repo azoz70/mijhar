@@ -33,14 +33,14 @@ src/mijhar/
   evidence/       redaction + SHA-256 integrity
   database/       SQLite persistence
   reports/        terminal, JSON, CSV, HTML
-rules/            bundled YAML rules (linux/, macos/, common/)
-frameworks/       cis/, nca_ecc/, sama_csf/, iso27001/
+src/mijhar/rules/data/       bundled YAML rules (linux/, macos/, common/)
+src/mijhar/compliance/data/ cis/, nca_ecc/, sama_csf/, iso27001/
 tests/            pytest suite
 ```
 
 ## Adding a security rule
 
-Add a YAML file under `rules/<platform>/` (or `rules/common/` for
+Add a YAML file under `src/mijhar/rules/data/<platform>/` (or `src/mijhar/rules/data/common/` for
 cross-platform checks). A rule carries applicability metadata that the engine
 uses to decide eligibility *before* execution:
 
@@ -79,7 +79,7 @@ PASS/FAIL themselves.
 
 ## Adding a framework
 
-Add a YAML file under `frameworks/<id>/` following the schema in
+Add a YAML file under `src/mijhar/compliance/data/<id>/` following the schema in
 `compliance/registry.py`. Preserve official control/sub-control IDs and record
 `source`/`verified` on every mapping. Never invent control IDs; mark unverified
 links as `verified: false`.
@@ -97,7 +97,7 @@ of full framework compliance.
 - Read-only by default; no automatic configuration changes.
 - No hardcoded credentials, keys, or secrets.
 - Keep applicability decisions in `applicability/`, separate from check
-  execution in `rules/`.
+  execution in `src/mijhar/rules/data/`.
 - Add or update tests for new behavior.
 
 ## Reporting security issues

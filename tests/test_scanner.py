@@ -2,15 +2,14 @@
 
 from __future__ import annotations
 
-from pathlib import Path
+import sqlite3
 
 from mijhar.collectors.macos import MacOSCollector
 from mijhar.core.config import Platform
 from mijhar.core.scanner import Scanner
+from mijhar.database.models import Database
+from mijhar.reports.json_report import report_json
 from tests.conftest import FakeRunner, result
-
-REPO_ROOT = Path(__file__).resolve().parents[1]
-
 
 def _macos_runner() -> FakeRunner:
     return FakeRunner(
@@ -35,11 +34,7 @@ def _macos_runner() -> FakeRunner:
 
 
 def test_scanner_runs_and_persists(tmp_path, monkeypatch):
-    scanner = Scanner(
-        rules_dir=REPO_ROOT / "rules",
-        frameworks_dir=REPO_ROOT / "frameworks",
-        db_path=tmp_path / "mijhar.db",
-    )
+    scanner = Scanner(db_path=tmp_path / "mijhar.db")
     monkeypatch.setattr(scanner, "make_collector", lambda platform, target="local", **kw: MacOSCollector(_macos_runner()))
 
     result_ = scanner.run(Platform.MACOS, asset_id="test-mac")
@@ -57,7 +52,6 @@ def test_scanner_runs_and_persists(tmp_path, monkeypatch):
     assert set(report["compliance"]) == {"cis", "iso27001", "nca-ecc", "sama-csf"}
 
     # Remediation records are auto-generated for failed findings.
-    from mijhar.database.models import Database
     with Database(tmp_path / "mijhar.db") as db:
         remediations = db.list_remediations()
         assert remediations, "expected auto-generated remediations"
@@ -65,14 +59,56 @@ def test_scanner_runs_and_persists(tmp_path, monkeypatch):
 
 
 def test_scanner_rejects_unsupported_local_platform(tmp_path):
-    scanner = Scanner(
-        rules_dir=REPO_ROOT / "rules",
-        frameworks_dir=REPO_ROOT / "frameworks",
-        db_path=tmp_path / "mijhar.db",
-    )
+    scanner = Scanner(db_path=tmp_path / "mijhar.db")
     try:
         scanner.run(Platform.WINDOWS)
     except ValueError as exc:
         assert "unsupported platform" in str(exc)
     else:
         raise AssertionError("expected ValueError for unsupported platform")
+
+
+def test_report_remediations_are_scoped_to_the_scan(tmp_path, monkeypatch):
+    scanner = Scanner(db_path=tmp_path / "mijhar.db")
+    monkeypatch.setattr(scanner, "make_collector", lambda *args, **kwargs: MacOSCollector(_macos_runner()))
+
+    first = scanner.run(Platform.MACOS, asset_id="first")
+    first_counts = scanner.build_report_data(first.scan_id)["remediation"]
+    second = scanner.run(Platform.MACOS, asset_id="second")
+    with Database(scanner.db_path) as db:
+        assert len(db.list_remediations()) == 2 * first_counts["open"]
+        for remediation in db.list_remediations(scan_id=second.scan_id):
+            db.close_remediation(remediation["id"])
+
+    assert first_counts["open"] > 0
+    assert scanner.build_report_data(first.scan_id)["remediation"] == first_counts
+    assert scanner.build_report_data(second.scan_id)["remediation"]["resolved"] == first_counts["open"]
+
+
+def test_raw_evidence_is_redacted_in_storage_and_reports(tmp_path, monkeypatch):
+    scanner = Scanner(db_path=tmp_path / "mijhar.db")
+    runner = _macos_runner()
+    runner.responses[("fdesetup", "status")] = result(0, "FileVault is Off. password=fixture-secret")
+    monkeypatch.setattr(scanner, "make_collector", lambda *args, **kwargs: MacOSCollector(runner))
+
+    scan = scanner.run(Platform.MACOS)
+    assert "fixture-secret" not in report_json(scan)
+    assert any("password=[REDACTED]" in record.content and record.redacted for record in scan.evidence)
+    with sqlite3.connect(scanner.db_path) as conn:
+        assert not conn.execute(
+            "SELECT id FROM findings WHERE evidence LIKE '%fixture-secret%' OR observed_value LIKE '%fixture-secret%'"
+        ).fetchall()
+        assert not conn.execute(
+            "SELECT id FROM evidence WHERE content LIKE '%fixture-secret%'"
+        ).fetchall()
+        # Simulate a finding created before evidence redaction was enforced.
+        conn.execute(
+            "UPDATE findings SET observed_value=?, evidence=? WHERE rule_id='MAC-001'",
+            ('{"token": "legacy-secret"}', '{"raw": "password=legacy-secret"}'),
+        )
+
+    report = scanner.build_report_data(scan.scan_id)
+    finding = next(finding for finding in report["findings"] if finding["rule_id"] == "MAC-001")
+    assert finding["observed_value"] == {"token": "[REDACTED]"}
+    assert finding["evidence"]["raw"] == "password=[REDACTED]"
+    assert "legacy-secret" not in report_json(report)

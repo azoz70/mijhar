@@ -180,14 +180,7 @@ def get_data_dir() -> Path:
     return _data_dir_platform_component() / "mijhar"
 
 
-def _repo_root() -> Path:
-    """Resolve the repository root relative to this source file.
-
-    ``src/mijhar/core/config.py`` -> ``parents[3]`` is the checkout root.
-    This only matters for locating bundled ``rules/`` and ``frameworks/``
-    directories and degrades gracefully when unavailable.
-    """
-    return Path(__file__).resolve().parents[3]
+_PACKAGE_DIR = Path(__file__).resolve().parents[1]
 
 
 @dataclass
@@ -206,9 +199,9 @@ class Config:
         if self.db_path is None:
             self.db_path = self.data_dir / "mijhar.db"
         if self.rules_dir is None:
-            self.rules_dir = _repo_root() / "rules"
+            self.rules_dir = _PACKAGE_DIR / "rules" / "data"
         if self.frameworks_dir is None:
-            self.frameworks_dir = _repo_root() / "frameworks"
+            self.frameworks_dir = _PACKAGE_DIR / "compliance" / "data"
         if self.reports_dir is None:
             self.reports_dir = self.data_dir / "reports"
 

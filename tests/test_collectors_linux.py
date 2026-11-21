@@ -6,18 +6,15 @@ from mijhar.collectors.linux import (
     LinuxCollector,
     mode_permission_bits,
     parse_login_defs,
-    parse_sshd_config,
     parse_uid_zero_accounts,
 )
 from tests.conftest import FakeFileReader, FakeRunner, result
 
-_SSHD_CONFIG = """\
-# sshd_config (simplified test fixture)
-PermitRootLogin no
-PasswordAuthentication no
-PermitEmptyPasswords no
-X11Forwarding no
-Subsystem sftp /usr/lib/openssh/sftp-server
+_SSHD_EFFECTIVE = """\
+permitrootlogin no
+passwordauthentication no
+permitemptypasswords no
+x11forwarding no
 """
 
 _LOGIN_DEFS = """\
@@ -38,7 +35,6 @@ def _happy_files() -> FakeFileReader:
     return FakeFileReader(
         texts={
             "/etc/os-release": 'ID=ubuntu\nVERSION_ID="22.04"\n',
-            "/etc/ssh/sshd_config": _SSHD_CONFIG,
             "/etc/login.defs": _LOGIN_DEFS,
             "/etc/pam.d/common-password": "password requisite pam_pwquality.so retry=3 minlen=12 remember=5\n",
             "/etc/passwd": _PASSWD,
@@ -55,6 +51,7 @@ def _happy_files() -> FakeFileReader:
 def _happy_runner() -> FakeRunner:
     return FakeRunner(
         {
+            ("/usr/sbin/sshd", "-T"): result(0, _SSHD_EFFECTIVE),
             ("ufw", "status"): result(0, "Status: active"),
             ("firewall-cmd", "--state"): result(0, "not running"),
             ("systemctl", "is-enabled", "auditd"): result(0, "enabled"),
@@ -107,9 +104,18 @@ def test_uid_zero_accounts_requires_zero_uid_only():
 # -- parser unit tests -------------------------------------------------------
 
 
-def test_parse_sshd_config_last_wins_and_strips_comments():
-    cfg = parse_sshd_config("# comment\nPermitRootLogin yes\nPermitRootLogin no  # overridden\n")
-    assert cfg["permitrootlogin"] == "no"
+def test_failed_effective_ssh_probe_does_not_use_file_values():
+    runner = FakeRunner({("/usr/sbin/sshd", "-T"): result(1, stderr="host keys unavailable")})
+    files = FakeFileReader(
+        texts={"/etc/ssh/sshd_config": "PermitRootLogin no"},
+        modes={"/etc/ssh/sshd_config": 0o644},
+    )
+    facts = {f.key: f for f in LinuxCollector(runner, files).collect().facts}
+
+    assert facts["ssh.config"].value is True
+    assert facts["ssh.permit_root_login"].value is None
+    assert facts["ssh.permit_root_login"].error == "host keys unavailable"
+    assert "/etc/ssh/sshd_config" not in files.reads
 
 
 def test_parse_login_defs():

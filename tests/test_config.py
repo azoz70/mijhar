@@ -59,11 +59,11 @@ def test_data_dir_override(monkeypatch, tmp_path):
     assert get_data_dir() == target
 
 
-def test_config_defaults_resolve_repo_dirs():
+def test_config_defaults_resolve_bundled_catalogs():
     cfg = get_config()
     assert cfg.db_path.name == "mijhar.db"
-    assert cfg.rules_dir.name == "rules"
-    assert cfg.frameworks_dir.name == "frameworks"
+    assert (cfg.rules_dir / "linux" / "ssh.yaml").is_file()
+    assert (cfg.frameworks_dir / "cis" / "cis_benchmarks.yaml").is_file()
     assert cfg.reports_dir.name == "reports"
 
 

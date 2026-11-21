@@ -203,7 +203,10 @@ class ControlAssessor:
                 excluded_reason="platform_incompatible: control maps only to checks for another platform",
             )
 
-        mapped = [f for f in findings if f.rule_id in rule_ids]
+        expected_rule_ids = set(rule_ids)
+        if included_rule_ids is not None:
+            expected_rule_ids &= included_rule_ids
+        mapped = [f for f in findings if f.rule_id in expected_rule_ids]
         if not mapped:
             return ControlAssessment(
                 control_id=control.id,
@@ -219,11 +222,15 @@ class ControlAssessor:
         pass_count = sum(1 for f in mapped if f.status is Status.PASS)
         fail_count = sum(1 for f in mapped if f.status is Status.FAIL)
         warning_count = sum(1 for f in mapped if f.status is Status.WARNING)
-        error_count = sum(1 for f in mapped if f.status in (Status.ERROR, Status.NOT_APPLICABLE))
+        error_count = sum(
+            1 for f in mapped
+            if f.status in (Status.ERROR, Status.NOT_APPLICABLE, Status.NOT_SUPPORTED)
+        )
+        missing_results = expected_rule_ids - {f.rule_id for f in mapped}
 
         if fail_count > 0:
             status = ControlStatus.NON_COMPLIANT
-        elif warning_count > 0:
+        elif warning_count > 0 or (pass_count > 0 and (error_count or missing_results)):
             status = ControlStatus.PARTIALLY_COMPLIANT
         elif pass_count > 0:
             status = ControlStatus.COMPLIANT

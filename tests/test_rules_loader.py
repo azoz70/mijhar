@@ -9,7 +9,7 @@ import pytest
 from mijhar.core.config import Platform, Severity, Status
 from mijhar.rules.loader import RuleLoader, RuleValidationError, rule_from_dict
 
-RULES_DIR = Path(__file__).resolve().parents[1] / "rules"
+RULES_DIR = Path(__file__).resolve().parents[1] / "src" / "mijhar" / "rules" / "data"
 
 
 def _rule(**overrides):
@@ -37,7 +37,7 @@ def test_string_rule_values_are_not_boolean_coerced():
     rules = {r.id: r for r in loader.load()}
     assert rules["SSH-002"].check.value == "no"
     assert isinstance(rules["SSH-002"].check.value, str)
-    assert rules["SSH-001"].check.value == ["yes", "without-password"]
+    assert rules["SSH-001"].check.value == "no"
 
 
 def test_platform_filtering():
