@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import os
 
 from mijhar.core import config
 from mijhar.core.config import (
