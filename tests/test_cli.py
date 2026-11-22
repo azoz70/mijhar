@@ -166,7 +166,13 @@ def test_scan_rejects_unknown_framework(tmp_path):
 
 
 def test_scan_framework_option_is_listed_in_help():
-    result = runner.invoke(app, ["scan", "--help"])
+    # Rich help can truncate or wrap long option names in narrow CI terminals.
+    # Set an explicit width and suppress the startup banner.
+    result = runner.invoke(
+        app, ["--no-banner", "scan", "--help"],
+        env={"COLUMNS": "160", "TERM": "dumb"},
+        terminal_width=160,
+    )
     assert result.exit_code == 0
     assert "--frameworks" in result.output
 
