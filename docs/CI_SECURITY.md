@@ -22,6 +22,19 @@ MIJHAR uses the existing pytest suite and separate GitHub Actions quality/securi
 - Keep a separate human approval gate for merging and publishing.
 - Required status checks and branch protection are **repository settings** and need independent verification; adding workflows alone does not enforce them.
 
+## Recommended branch protection (requires repository administrator)
+
+The connected GitHub integration returned HTTP 403 for `GET /branches/main/protection` and an empty list from `GET /rulesets` during this review. No branch protection was applied. A repository administrator should:
+
+1. Open GitHub > Settings > Rules > Rulesets (or Branches, depending on the UI).
+2. Add a rule targeting `main` and require a pull request before merging.
+3. Require passing checks corresponding to `pytest (Python 3.9)`, `pytest (Python 3.12)`, `Ruff and package build`, and `Bandit and dependency audit` **only after those jobs have actually passed and GitHub exposes them as selectable checks**.
+4. Block force pushes and branch deletion. Keep enforcement enabled for administrators if supported and suitable.
+5. Prefer at least one independent human reviewer where practical; never count the PR author's own review as independent.
+6. Test enforcement with a harmless draft PR; record observed results.
+
+Do not rely on `AGENTS.md` or CI YAML alone to prevent bypassing merge controls.
+
 ## Typical local commands
 
 After cloning, creating a virtual environment, and installing `.[dev]` plus the audit tools:
