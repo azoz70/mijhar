@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional
 from mijhar.collectors.base import Fact
 from mijhar.core.config import Platform, Status
 from mijhar.core.models import Finding
-from mijhar.rules.loader import Rule, RuleCheck
+from mijhar.rules.loader import Rule
 
 
 def _apply(operator: str, actual: Any, expected: Any) -> Optional[bool]:
