@@ -141,6 +141,7 @@ See [docs/COMPLIANCE.md](docs/COMPLIANCE.md) for full sourcing and status.
 - [Architecture](docs/architecture.md)
 - [Compliance mapping notes](docs/COMPLIANCE.md)
 - [Roadmap](docs/ROADMAP.md)
+- [Project status and handoff](docs/STATUS.md)
 - [Contributing](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 
