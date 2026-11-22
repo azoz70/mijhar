@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
 
 from mijhar.applicability.engine import (
     ApplicabilityEngine,
@@ -205,10 +204,9 @@ def test_framework_control_mapping_to_other_platform_is_not_applicable():
 
 def test_unchecked_control_is_never_compliant():
     from mijhar.compliance.assessment import ControlAssessor, ControlStatus
-    from mijhar.compliance.registry import Control, ControlMapping, Domain, Framework, MappingType
+    from mijhar.compliance.registry import Control, ControlMapping, MappingType
 
     control = Control(id="C-1", title="No finding", mappings=[ControlMapping(rule_id="R-1", mapping_type=MappingType.DIRECT)])
-    framework = Framework(id="t", name="T", version="1", domains=[Domain(id="d", name="D", controls=[control])])
     assessor = ControlAssessor()
     assessment = assessor.assess_control(control, [])
     assert assessment.status is not ControlStatus.COMPLIANT
