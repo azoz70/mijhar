@@ -32,6 +32,12 @@ Those are **structural tests**. Passing cannot establish regulatory accuracy, ap
 
 **Review gate:** Never change an interpretive mapping to `verified: true` solely because its structural test passes. Record the official section, evidence, reviewer, and verification date before approval.
 
+## Confirmed SAMA catalog defect and scoped correction
+
+The initial structural test detected duplicate IDs `3.3.17.1`, `3.3.17.2`, and `3.3.17.3`. Inspection found four vendor-management considerations incorrectly nested under `3.3.17 Vulnerability Management`. SAMA's official [3.4.1 Contract and Vendor Management](https://rulebook.sama.gov.sa/en/341-contract-and-vendor-management-0) clearly identifies considerations 1 through 4 as belonging to `3.4.1`.
+
+The four misplaced records were moved to `3.4.1.1` through `3.4.1.4`, with their source-grounded titles and third-party classification. This corrects only those four records. The remaining reconstructed SAMA IDs, subcontrols, and mappings have **not** received a full authoritative audit.
+
 ## Platform validation
 
 `.github/workflows/platform-smoke.yml` builds a fresh wheel, installs it into a clean virtual environment on GitHub-hosted `ubuntu-24.04` and `macos-15`, runs a **local read-only** scan with CIS-only mapping, and verifies that JSON, CSV, and HTML reports can be produced. Data remains temporary on the runner and is deleted in cleanup.
