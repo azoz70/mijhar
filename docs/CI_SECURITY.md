@@ -7,7 +7,7 @@ MIJHAR uses the existing pytest suite and separate GitHub Actions quality/securi
 | Check | Purpose | Expected evidence |
 | --- | --- | --- |
 | pytest (Python 3.9 / 3.12) | Regression and compatibility testing | Two successful matrix jobs |
-| Ruff (E4, E7, E9, F) | Syntax and core lint correctness | Successful quality job |
+| Ruff (E4, E7, E9, F63, F7, F82) | Syntax and core lint correctness | Successful quality job |
 | `python -m build` | sdist/wheel creation | Successful build step; packaging contents still need inspection |
 | `python -m pip check` | Installed dependency consistency | Successful check step |
 | Bandit (`-ll`) | Medium/high-severity security patterns in Python source | Successful security step or reviewed finding |
@@ -16,7 +16,7 @@ MIJHAR uses the existing pytest suite and separate GitHub Actions quality/securi
 ## Operating safeguards
 
 - Token permission: `contents: read`; no secrets or third-party upload configured.
-- CI cannot prove deployment readiness, detect every vulnerability, or validate all compliance mappings.
+- Initial full Ruff run exposed 12 existing unused-import/unused-assignment issues (F401/F841). The blocking CI baseline targets critical error families only, with those legacy style findings pending separate cleanup.\n- CI cannot prove deployment readiness, detect every vulnerability, or validate all compliance mappings.
 - `pip-audit` depends on network and vulnerability-advisory availability; false positives and environment-specific dependency findings require review, not automatic suppression.
 - Pinned major GitHub Actions releases should be evaluated for SHA pinning in a later supply-chain hardening change.
 - Keep a separate human approval gate for merging and publishing.
@@ -28,7 +28,7 @@ After cloning, creating a virtual environment, and installing `.[dev]` plus the 
 
 ```bash
 python -m pytest
-ruff check src tests --select E4,E7,E9,F
+ruff check src tests --select E4,E7,E9,F63,F7,F82
 bandit -r src -ll -q
 python -m pip_audit
 python -m build
