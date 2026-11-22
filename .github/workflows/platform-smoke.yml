@@ -1,0 +1,79 @@
+name: Platform smoke and legacy lint audit
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: CLI smoke (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            platform: linux
+          - os: macos-15
+            platform: macos
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build package
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Install built wheel into clean virtual environment
+        shell: bash
+        run: |
+          python -m venv "$RUNNER_TEMP/mijhar-smoke-venv"
+          "$RUNNER_TEMP/mijhar-smoke-venv/bin/python" -m pip install dist/*.whl
+          "$RUNNER_TEMP/mijhar-smoke-venv/bin/python" -m pip check
+      - name: Smoke test CLI and read-only local scan
+        shell: bash
+        env:
+          MIJHAR_HOME: ${{ runner.temp }}/mijhar-smoke-data
+          PLATFORM: ${{ matrix.platform }}
+        run: |
+          set -euo pipefail
+          CLI="$RUNNER_TEMP/mijhar-smoke-venv/bin/mijhar"
+          "$CLI" --version
+          "$CLI" --no-banner rules list
+          "$CLI" --no-banner frameworks list
+          "$CLI" --no-banner scan --target local --platform "$PLATFORM" --frameworks cis
+          "$CLI" --no-banner history
+          "$CLI" --no-banner report --format json --output "$RUNNER_TEMP/scan.json"
+          "$CLI" --no-banner report --format csv --output "$RUNNER_TEMP/scan.csv"
+          "$CLI" --no-banner report --format html --output "$RUNNER_TEMP/scan.html"
+          "$RUNNER_TEMP/mijhar-smoke-venv/bin/python" -c "import json,os; d=json.load(open(os.environ['RUNNER_TEMP']+'/scan.json')); assert isinstance(d,dict)"
+          test -s "$RUNNER_TEMP/scan.csv"
+          test -s "$RUNNER_TEMP/scan.html"
+      - name: Delete temporary scan data
+        if: always()
+        shell: bash
+        run: rm -rf "$RUNNER_TEMP/mijhar-smoke-data" "$RUNNER_TEMP/scan.json" "$RUNNER_TEMP/scan.csv" "$RUNNER_TEMP/scan.html"
+
+  legacy-lint-audit:
+    name: Full Ruff diagnostics (nonblocking baseline)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install Ruff
+        run: python -m pip install ruff
+      - name: Report existing unused imports and assignments
+        continue-on-error: true
+        run: ruff check src tests --select F401,F841 --output-format concise
