@@ -1978,38 +1978,6 @@ domains:
       verified: false
       source: SAMA CSF 3.3.17.3.f
       notes: Interpretive rule-to-consideration link (pending review).
-  - id: 3.3.17.1
-    title: The cyber security requirements should be defined, approved, implemented and communicated within the contract
-    domain: Cyber Security Operations and Technology
-    subdomain: Vulnerability Management
-    level: consideration
-    verified: true
-    technical: true
-    mappings: []
-  - id: 3.3.17.2
-    title: The compliance with contract and vendor management process should be monitored.
-    domain: Cyber Security Operations and Technology
-    subdomain: Vulnerability Management
-    level: consideration
-    verified: true
-    technical: true
-    mappings: []
-  - id: 3.3.17.3
-    title: The effectiveness of the cyber security controls within the contract and vendor management process should be
-    domain: Cyber Security Operations and Technology
-    subdomain: Vulnerability Management
-    level: consideration
-    verified: true
-    technical: true
-    mappings: []
-  - id: 3.3.17.4
-    title: 'These contract and vendor management processes should cover:'
-    domain: Cyber Security Operations and Technology
-    subdomain: Vulnerability Management
-    level: consideration
-    verified: true
-    technical: true
-    mappings: []
 - id: '3.4'
   name: Third Party Cyber Security
   controls:
@@ -2019,6 +1987,42 @@ domains:
     verified: true
     technical: false
     excluded_reason: ''
+  - id: 3.4.1.1
+    title: The cyber security requirements should be defined, approved, implemented and communicated within the contract and vendor management processes.
+    domain: Third Party Cyber Security
+    subdomain: Contract and Vendor Management
+    level: consideration
+    verified: true
+    technical: false
+    excluded_reason: Third-party contract/vendor governance is outside technical configuration assessment scope.
+    mappings: []
+  - id: 3.4.1.2
+    title: The compliance with contract and vendor management process should be monitored.
+    domain: Third Party Cyber Security
+    subdomain: Contract and Vendor Management
+    level: consideration
+    verified: true
+    technical: false
+    excluded_reason: Third-party contract/vendor governance is outside technical configuration assessment scope.
+    mappings: []
+  - id: 3.4.1.3
+    title: The effectiveness of the cyber security controls within the contract and vendor management process should be measured and periodically evaluated.
+    domain: Third Party Cyber Security
+    subdomain: Contract and Vendor Management
+    level: consideration
+    verified: true
+    technical: false
+    excluded_reason: Third-party contract/vendor governance is outside technical configuration assessment scope.
+    mappings: []
+  - id: 3.4.1.4
+    title: 'These contract and vendor management processes should cover:'
+    domain: Third Party Cyber Security
+    subdomain: Contract and Vendor Management
+    level: consideration
+    verified: true
+    technical: false
+    excluded_reason: Third-party contract/vendor governance is outside technical configuration assessment scope.
+    mappings: []
   - id: 3.4.2
     title: Outsourcing
     domain: Third Party Cyber Security
