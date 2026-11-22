@@ -175,7 +175,7 @@ def test_remediation_status_owner_due(tmp_path):
 def test_finding_review(tmp_path):
     db = Database(tmp_path / "test.db")
     try:
-        rid = db.add_finding_review("F-1", "accept", reviewer="bob", comment="verified")
+        db.add_finding_review("F-1", "accept", reviewer="bob", comment="verified")
         assert db.list_finding_reviews("F-1")[0]["decision"] == "accept"
         db.add_finding_review("F-1", "needs_evidence", reviewer="carol", comment="more logs")
         assert len(db.list_finding_reviews("F-1")) == 2
