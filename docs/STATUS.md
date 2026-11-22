@@ -39,3 +39,16 @@
 ## Handoff rule
 
 For a future AI session: read this file, [AGENTS.md](../AGENTS.md), [DECISIONS.md](DECISIONS.md), and the relevant source. **Re-check GitHub for the latest state rather than treating this snapshot as current indefinitely.** Never report unexecuted tests as passing.
+
+## Engineering hardening review — 2026-11-22
+
+This section is a **PR-specific handoff**, not a claim that the changes have been merged or released.
+
+- Draft PR: [#4 — engineering quality/security hardening](https://github.com/azoz70/mijhar/pull/4); branch: `engineering/quality-security-hardening`.
+- Earlier PR [#3](https://github.com/azoz70/mijhar/pull/3) was merged externally while the repair work was underway; PR #4 was created from the then-current `main`.
+- First CI run on PR #3: Python 3.9 setup failed because that interpreter was not available on the selected Ubuntu 26.04 runner; Python 3.12 recorded **165 passes and 1 failing CLI help assertion**.
+- Initial PR #4 rerun on stable Ubuntu 24.04: the Python 3.9 and Python 3.12 pytest jobs reported **success**. Initial Bandit/pip-audit job also reported **success**.
+- Initial Ruff job reported **12 existing F401/F841 findings**, so the CI blocking baseline now checks only critical rule families `E4,E7,E9,F63,F7,F82`. Those legacy unused-import/unused-assignment findings remain review debt, not silently repaired.
+- The latest updated PR #4 head has not yet been conclusively verified by successful GitHub Actions jobs. Check GitHub's latest Checks tab before approval.
+- Branch protection was **not modified**: GitHub API returned 403 when reading branch protection, and the integrated toolset has no administrative write action. See [CI_SECURITY.md](CI_SECURITY.md) for the manual configuration checklist.
+- Release/publishing not performed. No penetration tests or live target scans were performed.
