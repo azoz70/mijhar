@@ -16,7 +16,8 @@ MIJHAR uses the existing pytest suite and separate GitHub Actions quality/securi
 ## Operating safeguards
 
 - Token permission: `contents: read`; no secrets or third-party upload configured.
-- Initial full Ruff run exposed 12 existing unused-import/unused-assignment issues (F401/F841). The blocking CI baseline targets critical error families only, with those legacy style findings pending separate cleanup.\n- CI cannot prove deployment readiness, detect every vulnerability, or validate all compliance mappings.
+- Initial full Ruff run exposed 12 existing unused-import/unused-assignment issues (F401/F841). The blocking CI baseline targets critical error families only, with those legacy style findings pending separate cleanup.
+- CI cannot prove deployment readiness, detect every vulnerability, or validate all compliance mappings.
 - `pip-audit` depends on network and vulnerability-advisory availability; false positives and environment-specific dependency findings require review, not automatic suppression.
 - Pinned major GitHub Actions releases should be evaluated for SHA pinning in a later supply-chain hardening change.
 - Keep a separate human approval gate for merging and publishing.
