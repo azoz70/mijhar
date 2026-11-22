@@ -9,7 +9,7 @@ main menu when MIJHAR is launched with no subcommand, and handles
 from __future__ import annotations
 
 import typer
-from mijhar import __app_name__, __author__, __author_linkedin__, __slogan__, __tagline__, __version__
+from mijhar import __app_name__, __author__, __author_linkedin__, __slogan__, __version__
 from mijhar.cli import logo
 from mijhar.cli.commands import (
     about_command,
