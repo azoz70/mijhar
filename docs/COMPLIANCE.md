@@ -32,7 +32,7 @@ verification status of every mapping, in line with the MIJHAR mapping rules.
 
 - **NCA ECC-2:2024** — National Cybersecurity Authority, *Essential Cybersecurity Controls*:
   [official English PDF](https://istitlaa.ncc.gov.sa/en/security/nca/ecc22024/Documents/ECC%202-2024%20EN%2019092024.pdf).
-  Control and sub-control IDs/titles are extracted verbatim from this document
+  Control and sub-control IDs/descriptions are attributed to this document; some display titles are abbreviated and require line-by-line validation
   (TLP:White / Public). The front-matter summary states "110 controls / 90
   subcontrols" while the document body contains 108 main controls and 91
   sub-controls; MIJHAR records the body as extracted.
@@ -45,12 +45,8 @@ verification status of every mapping, in line with the MIJHAR mapping rules.
   framework compliance.
 - MIJHAR never claims complete framework compliance based on a limited number
   of automated checks.
-- NCA ECC control/sub-control IDs and titles are authoritative (extracted from
-  the official ECC-2:2024 document), but the rule→control links are
-  interpretive and require reviewer validation.
-- SAMA CSF domain/subdomain names and numbers are authoritative (from the
-  SAMA Rulebook); the rule→subdomain links are interpretive, and the
-  principle/objective/control-consideration text is not reproduced here.
+- The NCA catalog is based on the official ECC-2:2024 document, but some displayed titles are abbreviated; the catalog transcription and rule-to-control links require independent reviewer validation.
+- SAMA CSF names and hierarchy are based on the official Rulebook. Consideration IDs are reconstructed; their accuracy, wording, and technical rule links require independent review.
 
 ## Verification fields
 
@@ -82,3 +78,6 @@ Rule→control links use three classes: `direct` (the check verifies the
 requirement), `partial` (verifies part), and `supporting_evidence` (supporting
 evidence only, cannot establish compliance alone). A single technical check
 never establishes full framework compliance.
+
+
+See [NCA/SAMA mapping validation record](FRAMEWORK_VALIDATION.md) for evidence and outstanding verification.

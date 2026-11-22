@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from mijhar.collectors.base import CommandResult, CommandRunner, Fact
+from mijhar.collectors.base import CommandRunner, Fact
 from tests.conftest import FakeRunner, result
 
 

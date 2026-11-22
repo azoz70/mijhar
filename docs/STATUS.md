@@ -52,3 +52,14 @@ This section is a **PR-specific handoff**, not a claim that the changes have bee
 - The latest updated PR #4 head has not yet been conclusively verified by successful GitHub Actions jobs. Check GitHub's latest Checks tab before approval.
 - Branch protection was **not modified**: GitHub API returned 403 when reading branch protection, and the integrated toolset has no administrative write action. See [CI_SECURITY.md](CI_SECURITY.md) for the manual configuration checklist.
 - Release/publishing not performed. No penetration tests or live target scans were performed.
+
+
+## Follow-up verification work — 2026-11-22 (PR #5)
+
+- After PR #4 was merged into `main` (merge SHA `815efe446e5990139fcb03697a828795d0de2b2f`), follow-up work was isolated in [Draft PR #5](https://github.com/azoz70/mijhar/pull/5).
+- Added hosted `ubuntu-24.04` and `macos-15` smoke validation: build wheel, install into clean virtual environment, run local read-only CIS-scoped scan, generate JSON/CSV/HTML outputs and discard temporary data. The first run reported success on both platforms; verify newest head checks before merge.
+- Initial full Ruff diagnostics identified 12 F401/F841 findings. Removed confirmed unused imports and assignments with minimal edits; extended blocking Ruff checks to E4/E7/E9 and all F rules. Completion on the **latest head** must be confirmed from CI.
+- Added structural checks for duplicate NCA/SAMA identifiers, references to existing rules and intentionally unverified mappings. This is not official regulatory validation or complete technical coverage.
+- Recorded official provenance and unresolved catalog ambiguities in [FRAMEWORK_VALIDATION.md](FRAMEWORK_VALIDATION.md).
+- GitHub integration still cannot configure branch protection (admin endpoint denied HTTP 403); no branch rule was applied. Manual setup remains required.
+- No release, package publication, third-party scans or merge of PR #5 were performed.

@@ -8,7 +8,6 @@ privileged paths degrade to ``error`` facts instead of failing collection.
 
 from __future__ import annotations
 
-import re
 from typing import Dict, List, Optional
 
 from mijhar.collectors.base import BaseCollector, CollectionResult, Fact

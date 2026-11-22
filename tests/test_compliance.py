@@ -240,11 +240,15 @@ def test_technical_and_excluded_controls():
     assert all(c.excluded_reason for c in excluded)
     assert len(mapper.technical_controls(nca)) + len(excluded) == len(nca.controls)
 
-    # SAMA CSF: 17 excluded subdomains; 15 technical subdomains + 220
-    # control considerations.
+    # SAMA CSF: 17 non-technical subdomains. The four vendor-management
+    # considerations corrected under 3.4.1 are also excluded individually.
     sama = registry.get("sama-csf")
-    assert len(mapper.excluded_controls(sama)) == 17
-    assert len(mapper.technical_controls(sama)) == 235
+    sama_excluded = mapper.excluded_controls(sama)
+    assert len([c for c in sama_excluded if c.level != "consideration"]) == 17
+    assert {c.id for c in sama_excluded if c.level == "consideration"} >= {
+        "3.4.1.1", "3.4.1.2", "3.4.1.3", "3.4.1.4",
+    }
+    assert len(mapper.technical_controls(sama)) + len(sama_excluded) == len(sama.controls)
 
     # CIS: representative technical subset — all technical.
     cis = registry.get("cis")

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 from mijhar.compliance.registry import Control, ControlMapping, Framework, MappingType
 from mijhar.core.models import Finding

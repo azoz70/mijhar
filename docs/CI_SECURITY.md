@@ -7,7 +7,7 @@ MIJHAR uses the existing pytest suite and separate GitHub Actions quality/securi
 | Check | Purpose | Expected evidence |
 | --- | --- | --- |
 | pytest (Python 3.9 / 3.12) | Regression and compatibility testing | Two successful matrix jobs |
-| Ruff (E4, E7, E9, F63, F7, F82) | Syntax and core lint correctness | Successful quality job |
+| Ruff (E4, E7, E9, all F rules) | Syntax and core lint correctness | Successful quality job |
 | `python -m build` | sdist/wheel creation | Successful build step; packaging contents still need inspection |
 | `python -m pip check` | Installed dependency consistency | Successful check step |
 | Bandit (`-ll`) | Medium/high-severity security patterns in Python source | Successful security step or reviewed finding |
@@ -16,7 +16,7 @@ MIJHAR uses the existing pytest suite and separate GitHub Actions quality/securi
 ## Operating safeguards
 
 - Token permission: `contents: read`; no secrets or third-party upload configured.
-- Initial full Ruff run exposed 12 existing unused-import/unused-assignment issues (F401/F841). The blocking CI baseline targets critical error families only, with those legacy style findings pending separate cleanup.
+- The initial Ruff baseline found 12 F401/F841 issues. These were addressed on PR #5; the blocking CI now checks all F rules plus E4/E7/E9. Confirm with current PR checks before treating the cleanup as validated.
 - CI cannot prove deployment readiness, detect every vulnerability, or validate all compliance mappings.
 - `pip-audit` depends on network and vulnerability-advisory availability; false positives and environment-specific dependency findings require review, not automatic suppression.
 - Pinned major GitHub Actions releases should be evaluated for SHA pinning in a later supply-chain hardening change.
@@ -42,7 +42,7 @@ After cloning, creating a virtual environment, and installing `.[dev]` plus the 
 
 ```bash
 python -m pytest
-ruff check src tests --select E4,E7,E9,F63,F7,F82
+ruff check src tests --select E4,E7,E9,F
 bandit -r src -ll -q
 python -m pip_audit
 python -m build
@@ -50,3 +50,6 @@ python -m pip check
 ```
 
 Use exact CI logs for verified results. Do not claim a command passed merely because it is documented here.
+
+
+The separate [platform smoke workflow](../.github/workflows/platform-smoke.yml) tests installed wheels and local read-only scans on hosted Linux/macOS runners.

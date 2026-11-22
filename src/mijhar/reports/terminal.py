@@ -16,7 +16,6 @@ from mijhar.cli.console import (
     style_for_severity,
     style_for_status,
 )
-from mijhar.core.config import Status
 from mijhar.reports import finding_dicts
 
 _REASON_LABEL = {
